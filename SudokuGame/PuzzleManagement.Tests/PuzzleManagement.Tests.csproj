@@ -50,6 +50,7 @@
   <ItemGroup>
     <Compile Include="Models\GeneratorTests.cs" />
     <Compile Include="Models\SolverTests.cs" />
+    <Compile Include="Models\PuzzleTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

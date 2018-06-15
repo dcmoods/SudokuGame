@@ -41,12 +41,17 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Enums\Difficulty.cs" />
+    <Compile Include="Models\HardPuzzle.cs" />
+    <Compile Include="Models\MediumPuzzle.cs" />
+    <Compile Include="Models\EasyPuzzle.cs" />
+    <Compile Include="Models\EmptyPuzzle.cs" />
     <Compile Include="Models\Generator.cs" />
     <Compile Include="Models\Puzzle.cs" />
     <Compile Include="Models\Solver.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="Factories\" />
     <Folder Include="Interfaces\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
