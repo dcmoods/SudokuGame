@@ -48,6 +48,7 @@
     <Reference Include="System.Core" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Factory\FactoryTests.cs" />
     <Compile Include="Models\GeneratorTests.cs" />
     <Compile Include="Models\SolverTests.cs" />
     <Compile Include="Models\PuzzleTests.cs" />
