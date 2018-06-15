@@ -13,7 +13,7 @@
 <#
     foreach (var modelType in GetModelTypes())
     {
-		if(modelType.IsClass &&  modelType.Name == "SudokuCell")
+		if(modelType.IsClass && modelType.Name == "SudokuCell" || modelType.Name == "GameBoard")
         {
 			var simpleProperties = modelType.GetProperties().Where(p => p.PropertyType.IsValueType
 										 || p.PropertyType == typeof(string) 

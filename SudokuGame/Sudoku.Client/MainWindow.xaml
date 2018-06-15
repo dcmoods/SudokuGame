@@ -8,16 +8,239 @@
         xmlns:dataGrid2D="http://gu.se/DataGrid2D"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
-   
+
     <Grid>
-        <!--<TextBox HorizontalAlignment="Left" Height="23" Margin="65,57,0,0" TextWrapping="Wrap" Text="{Binding PuzzleArray[0-0]}" VerticalAlignment="Top" Width="120"/>
-        <TextBox HorizontalAlignment="Left" Height="23" Margin="203,57,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
-        <TextBox HorizontalAlignment="Left" Height="23" Margin="342,57,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>-->
-        <DataGrid ItemsSource="{Binding SudokuCells}">
-            <!--<DataGrid.Columns>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="Auto" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <Grid>
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="Auto" />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+
+            <TextBox x:Name="textBox00" HorizontalAlignment="Left" Height="23" Margin="5" TextWrapping="Wrap" VerticalAlignment="Top" Width="25" />
+            <TextBox x:Name="textBox01" Grid.Row="0" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="5" TextWrapping="Wrap" VerticalAlignment="Top" Width="25"/>
+            <TextBox x:Name="textBox02" Grid.Row="0" Grid.Column="2" HorizontalAlignment="Left" Height="23" Margin="5" TextWrapping="Wrap" VerticalAlignment="Top" Width="25"/>
+            <TextBox x:Name="textBox10" Grid.Row="1" Grid.Column="0" HorizontalAlignment="Left" Height="23" Margin="5" TextWrapping="Wrap" VerticalAlignment="Top" Width="25"/>
+            <TextBox x:Name="textBox11" Grid.Row="1" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="5" TextWrapping="Wrap" VerticalAlignment="Top" Width="25"/>
+            <TextBox x:Name="textBox12" Grid.Row="1" Grid.Column="2" HorizontalAlignment="Left" Height="23" Margin="5" TextWrapping="Wrap" VerticalAlignment="Top" Width="25"/>
+            <TextBox x:Name="textBox20" Grid.Row="2" Grid.Column="0" HorizontalAlignment="Left" Height="23" Margin="5" TextWrapping="Wrap" VerticalAlignment="Top" Width="25"/>
+            <TextBox x:Name="textBox21" Grid.Row="2" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="5" TextWrapping="Wrap" VerticalAlignment="Top" Width="25"/>
+            <TextBox x:Name="textBox22" Grid.Row="2" Grid.Column="2" HorizontalAlignment="Left" Height="23" Margin="5" TextWrapping="Wrap" VerticalAlignment="Top" Width="25"/>
+        </Grid>
+
+        <Grid Grid.Row="0" Grid.Column="1">
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="Auto" />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+
+            <TextBox x:Name="textBox03" HorizontalAlignment="Left" Height="23" Margin="5" TextWrapping="Wrap" VerticalAlignment="Top" Width="25" />
+            <TextBox x:Name="textBox04" Grid.Row="0" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="5" TextWrapping="Wrap" VerticalAlignment="Top" Width="25"/>
+            <TextBox x:Name="textBox05" Grid.Row="0" Grid.Column="2" HorizontalAlignment="Left" Height="23" Margin="5" TextWrapping="Wrap" VerticalAlignment="Top" Width="25"/>
+            <TextBox x:Name="textBox13" Grid.Row="1" Grid.Column="0" HorizontalAlignment="Left" Height="23" Margin="5" TextWrapping="Wrap" VerticalAlignment="Top" Width="25"/>
+            <TextBox x:Name="textBox14" Grid.Row="1" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="5" TextWrapping="Wrap" VerticalAlignment="Top" Width="25"/>
+            <TextBox x:Name="textBox15" Grid.Row="1" Grid.Column="2" HorizontalAlignment="Left" Height="23" Margin="5" TextWrapping="Wrap" VerticalAlignment="Top" Width="25"/>
+            <TextBox x:Name="textBox23" Grid.Row="2" Grid.Column="0" HorizontalAlignment="Left" Height="23" Margin="5" TextWrapping="Wrap" VerticalAlignment="Top" Width="25"/>
+            <TextBox x:Name="textBox24" Grid.Row="2" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="5" TextWrapping="Wrap" VerticalAlignment="Top" Width="25"/>
+            <TextBox x:Name="textBox25" Grid.Row="2" Grid.Column="2" HorizontalAlignment="Left" Height="23" Margin="5" TextWrapping="Wrap" VerticalAlignment="Top" Width="25"/>
+        </Grid>
+
+        <Grid Grid.Row="0" Grid.Column="2">
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="Auto" />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+
+            <TextBox x:Name="textBox06" HorizontalAlignment="Left" Height="23" Margin="5" TextWrapping="Wrap" VerticalAlignment="Top" Width="25" />
+            <TextBox x:Name="textBox07" Grid.Row="0" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="5" TextWrapping="Wrap" VerticalAlignment="Top" Width="25"/>
+            <TextBox x:Name="textBox08" Grid.Row="0" Grid.Column="2" HorizontalAlignment="Left" Height="23" Margin="5" TextWrapping="Wrap" VerticalAlignment="Top" Width="25"/>
+            <TextBox x:Name="textBox16" Grid.Row="1" Grid.Column="0" HorizontalAlignment="Left" Height="23" Margin="5" TextWrapping="Wrap" VerticalAlignment="Top" Width="25"/>
+            <TextBox x:Name="textBox17" Grid.Row="1" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="5" TextWrapping="Wrap" VerticalAlignment="Top" Width="25"/>
+            <TextBox x:Name="textBox18" Grid.Row="1" Grid.Column="2" HorizontalAlignment="Left" Height="23" Margin="5" TextWrapping="Wrap" VerticalAlignment="Top" Width="25"/>
+            <TextBox x:Name="textBox26" Grid.Row="2" Grid.Column="0" HorizontalAlignment="Left" Height="23" Margin="5" TextWrapping="Wrap" VerticalAlignment="Top" Width="25"/>
+            <TextBox x:Name="textBox27" Grid.Row="2" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="5" TextWrapping="Wrap" VerticalAlignment="Top" Width="25"/>
+            <TextBox x:Name="textBox28" Grid.Row="2" Grid.Column="2" HorizontalAlignment="Left" Height="23" Margin="5" TextWrapping="Wrap" VerticalAlignment="Top" Width="25"/>
+        </Grid>
+
+        <Grid Grid.Row="1" Grid.Column="0">
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="Auto" />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+
+            <TextBox x:Name="textBox30" HorizontalAlignment="Left" Height="23" Margin="5" TextWrapping="Wrap" VerticalAlignment="Top" Width="25" />
+            <TextBox x:Name="textBox31" Grid.Row="0" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="5" TextWrapping="Wrap" VerticalAlignment="Top" Width="25"/>
+            <TextBox x:Name="textBox32" Grid.Row="0" Grid.Column="2" HorizontalAlignment="Left" Height="23" Margin="5" TextWrapping="Wrap" VerticalAlignment="Top" Width="25"/>
+            <TextBox x:Name="textBox40" Grid.Row="1" Grid.Column="0" HorizontalAlignment="Left" Height="23" Margin="5" TextWrapping="Wrap" VerticalAlignment="Top" Width="25"/>
+            <TextBox x:Name="textBox41" Grid.Row="1" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="5" TextWrapping="Wrap" VerticalAlignment="Top" Width="25"/>
+            <TextBox x:Name="textBox42" Grid.Row="1" Grid.Column="2" HorizontalAlignment="Left" Height="23" Margin="5" TextWrapping="Wrap" VerticalAlignment="Top" Width="25"/>
+            <TextBox x:Name="textBox50" Grid.Row="2" Grid.Column="0" HorizontalAlignment="Left" Height="23" Margin="5" TextWrapping="Wrap" VerticalAlignment="Top" Width="25"/>
+            <TextBox x:Name="textBox51" Grid.Row="2" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="5" TextWrapping="Wrap" VerticalAlignment="Top" Width="25"/>
+            <TextBox x:Name="textBox52" Grid.Row="2" Grid.Column="2" HorizontalAlignment="Left" Height="23" Margin="5" TextWrapping="Wrap" VerticalAlignment="Top" Width="25"/>
+        </Grid>
+
+        <Grid Grid.Row="1" Grid.Column="1">
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="Auto" />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+
+            <TextBox x:Name="textBox33" HorizontalAlignment="Left" Height="23" Margin="5" TextWrapping="Wrap" VerticalAlignment="Top" Width="25" />
+            <TextBox x:Name="textBox34" Grid.Row="0" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="5" TextWrapping="Wrap" VerticalAlignment="Top" Width="25"/>
+            <TextBox x:Name="textBox35" Grid.Row="0" Grid.Column="2" HorizontalAlignment="Left" Height="23" Margin="5" TextWrapping="Wrap" VerticalAlignment="Top" Width="25"/>
+            <TextBox x:Name="textBox43" Grid.Row="1" Grid.Column="0" HorizontalAlignment="Left" Height="23" Margin="5" TextWrapping="Wrap" VerticalAlignment="Top" Width="25"/>
+            <TextBox x:Name="textBox44" Grid.Row="1" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="5" TextWrapping="Wrap" VerticalAlignment="Top" Width="25"/>
+            <TextBox x:Name="textBox45" Grid.Row="1" Grid.Column="2" HorizontalAlignment="Left" Height="23" Margin="5" TextWrapping="Wrap" VerticalAlignment="Top" Width="25"/>
+            <TextBox x:Name="textBox53" Grid.Row="2" Grid.Column="0" HorizontalAlignment="Left" Height="23" Margin="5" TextWrapping="Wrap" VerticalAlignment="Top" Width="25"/>
+            <TextBox x:Name="textBox54" Grid.Row="2" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="5" TextWrapping="Wrap" VerticalAlignment="Top" Width="25"/>
+            <TextBox x:Name="textBox55" Grid.Row="2" Grid.Column="2" HorizontalAlignment="Left" Height="23" Margin="5" TextWrapping="Wrap" VerticalAlignment="Top" Width="25"/>
+        </Grid>
+
+        <Grid Grid.Row="1" Grid.Column="2">
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="Auto" />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+
+            <TextBox x:Name="textBox36" HorizontalAlignment="Left" Height="23" Margin="5" TextWrapping="Wrap" VerticalAlignment="Top" Width="25" />
+            <TextBox x:Name="textBox37" Grid.Row="0" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="5" TextWrapping="Wrap" VerticalAlignment="Top" Width="25"/>
+            <TextBox x:Name="textBox38" Grid.Row="0" Grid.Column="2" HorizontalAlignment="Left" Height="23" Margin="5" TextWrapping="Wrap" VerticalAlignment="Top" Width="25"/>
+            <TextBox x:Name="textBox46" Grid.Row="1" Grid.Column="0" HorizontalAlignment="Left" Height="23" Margin="5" TextWrapping="Wrap" VerticalAlignment="Top" Width="25"/>
+            <TextBox x:Name="textBox47" Grid.Row="1" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="5" TextWrapping="Wrap" VerticalAlignment="Top" Width="25"/>
+            <TextBox x:Name="textBox48" Grid.Row="1" Grid.Column="2" HorizontalAlignment="Left" Height="23" Margin="5" TextWrapping="Wrap" VerticalAlignment="Top" Width="25"/>
+            <TextBox x:Name="textBox56" Grid.Row="2" Grid.Column="0" HorizontalAlignment="Left" Height="23" Margin="5" TextWrapping="Wrap" VerticalAlignment="Top" Width="25"/>
+            <TextBox x:Name="textBox57" Grid.Row="2" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="5" TextWrapping="Wrap" VerticalAlignment="Top" Width="25"/>
+            <TextBox x:Name="textBox58" Grid.Row="2" Grid.Column="2" HorizontalAlignment="Left" Height="23" Margin="5" TextWrapping="Wrap" VerticalAlignment="Top" Width="25"/>
+        </Grid>
+
+        <Grid Grid.Row="2" Grid.Column="0">
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="Auto" />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+
+            <TextBox x:Name="textBox60" HorizontalAlignment="Left" Height="23" Margin="5" TextWrapping="Wrap" VerticalAlignment="Top" Width="25" />
+            <TextBox x:Name="textBox61" Grid.Row="0" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="5" TextWrapping="Wrap" VerticalAlignment="Top" Width="25"/>
+            <TextBox x:Name="textBox62" Grid.Row="0" Grid.Column="2" HorizontalAlignment="Left" Height="23" Margin="5" TextWrapping="Wrap" VerticalAlignment="Top" Width="25"/>
+            <TextBox x:Name="textBox70" Grid.Row="1" Grid.Column="0" HorizontalAlignment="Left" Height="23" Margin="5" TextWrapping="Wrap" VerticalAlignment="Top" Width="25"/>
+            <TextBox x:Name="textBox71" Grid.Row="1" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="5" TextWrapping="Wrap" VerticalAlignment="Top" Width="25"/>
+            <TextBox x:Name="textBox72" Grid.Row="1" Grid.Column="2" HorizontalAlignment="Left" Height="23" Margin="5" TextWrapping="Wrap" VerticalAlignment="Top" Width="25"/>
+            <TextBox x:Name="textBox80" Grid.Row="2" Grid.Column="0" HorizontalAlignment="Left" Height="23" Margin="5" TextWrapping="Wrap" VerticalAlignment="Top" Width="25"/>
+            <TextBox x:Name="textBox81" Grid.Row="2" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="5" TextWrapping="Wrap" VerticalAlignment="Top" Width="25"/>
+            <TextBox x:Name="textBox82" Grid.Row="2" Grid.Column="2" HorizontalAlignment="Left" Height="23" Margin="5" TextWrapping="Wrap" VerticalAlignment="Top" Width="25"/>
+        </Grid>
+
+        <Grid Grid.Row="2" Grid.Column="1">
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="Auto" />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+
+            <TextBox x:Name="textBox63" HorizontalAlignment="Left" Height="23" Margin="5" TextWrapping="Wrap" VerticalAlignment="Top" Width="25" />
+            <TextBox x:Name="textBox64" Grid.Row="0" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="5" TextWrapping="Wrap" VerticalAlignment="Top" Width="25"/>
+            <TextBox x:Name="textBox65" Grid.Row="0" Grid.Column="2" HorizontalAlignment="Left" Height="23" Margin="5" TextWrapping="Wrap" VerticalAlignment="Top" Width="25"/>
+            <TextBox x:Name="textBox73" Grid.Row="1" Grid.Column="0" HorizontalAlignment="Left" Height="23" Margin="5" TextWrapping="Wrap" VerticalAlignment="Top" Width="25"/>
+            <TextBox x:Name="textBox74" Grid.Row="1" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="5" TextWrapping="Wrap" VerticalAlignment="Top" Width="25"/>
+            <TextBox x:Name="textBox75" Grid.Row="1" Grid.Column="2" HorizontalAlignment="Left" Height="23" Margin="5" TextWrapping="Wrap" VerticalAlignment="Top" Width="25"/>
+            <TextBox x:Name="textBox83" Grid.Row="2" Grid.Column="0" HorizontalAlignment="Left" Height="23" Margin="5" TextWrapping="Wrap" VerticalAlignment="Top" Width="25"/>
+            <TextBox x:Name="textBox84" Grid.Row="2" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="5" TextWrapping="Wrap" VerticalAlignment="Top" Width="25"/>
+            <TextBox x:Name="textBox85" Grid.Row="2" Grid.Column="2" HorizontalAlignment="Left" Height="23" Margin="5" TextWrapping="Wrap" VerticalAlignment="Top" Width="25"/>
+        </Grid>
+
+        <Grid Grid.Row="2" Grid.Column="2">
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="Auto" />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+
+            <TextBox x:Name="textBox66" HorizontalAlignment="Left" Height="23" Margin="5" TextWrapping="Wrap" VerticalAlignment="Top" Width="25" />
+            <TextBox x:Name="textBox67" Grid.Row="0" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="5" TextWrapping="Wrap" VerticalAlignment="Top" Width="25"/>
+            <TextBox x:Name="textBox68" Grid.Row="0" Grid.Column="2" HorizontalAlignment="Left" Height="23" Margin="5" TextWrapping="Wrap" VerticalAlignment="Top" Width="25"/>
+            <TextBox x:Name="textBox76" Grid.Row="1" Grid.Column="0" HorizontalAlignment="Left" Height="23" Margin="5" TextWrapping="Wrap" VerticalAlignment="Top" Width="25"/>
+            <TextBox x:Name="textBox77" Grid.Row="1" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="5" TextWrapping="Wrap" VerticalAlignment="Top" Width="25"/>
+            <TextBox x:Name="textBox78" Grid.Row="1" Grid.Column="2" HorizontalAlignment="Left" Height="23" Margin="5" TextWrapping="Wrap" VerticalAlignment="Top" Width="25"/>
+            <TextBox x:Name="textBox86" Grid.Row="2" Grid.Column="0" HorizontalAlignment="Left" Height="23" Margin="5" TextWrapping="Wrap" VerticalAlignment="Top" Width="25"/>
+            <TextBox x:Name="textBox87" Grid.Row="2" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="5" TextWrapping="Wrap" VerticalAlignment="Top" Width="25"/>
+            <TextBox x:Name="textBox88" Grid.Row="2" Grid.Column="2" HorizontalAlignment="Left" Height="23" Margin="5" TextWrapping="Wrap" VerticalAlignment="Top" Width="25"/>
+        </Grid>
+
+        <!--<DataGrid ItemsSource="{Binding GameBoard.SudokuCells}" AutoGenerateColumns="False">
+            <DataGrid.Columns>
                 <DataGridTextColumn Binding="{Binding Path=Value}" Header="#" Width="60"/>
-            </DataGrid.Columns>-->
-        </DataGrid>
+            </DataGrid.Columns>
+        </DataGrid>-->
         <!--<DataGrid AutoGenerateColumns="False"
           dataGrid2D:ItemsSource.Array2DTransposed="{Binding PuzzleArray}">
             <DataGrid.Columns>

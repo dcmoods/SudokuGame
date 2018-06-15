@@ -22,35 +22,24 @@ namespace Sudoku.Client.ViewModels
         public GameViewModel()
         {
             New = new Command(NewCommand);
-            New.Execute(true);
-
-            SudokuCells.CollectionChanged += SudokuCells_CollectionChanged;
+            Init();
         }
 
-        private void SudokuCells_CollectionChanged(object sender, NotifyCollectionChangedEventArgs e)
+        private void Init()
         {
-            if(e.Action == NotifyCollectionChangedAction.Remove)
+            Puzzle = PuzzleFactory.GetPuzzle(Difficulty);
+            Puzzle.CreatePuzzle();
+            GameBoard = new GameBoardWrapper(new GameBoard()
             {
-                foreach(SudokuCellWrapper item in e.OldItems)
-                {
-                    item.PropertyChanged += Item_PropertyChanged;
-                }
-            }
+                SudokuCells = MapToArrayEntity(Puzzle.PuzzleArray)
+            });
         }
 
-        private void Item_PropertyChanged(object sender, System.ComponentModel.PropertyChangedEventArgs e)
+        GameBoardWrapper gameBoard;
+        public GameBoardWrapper GameBoard
         {
-            if (e.PropertyName == nameof(SudokuCellWrapper.Value))
-            {
-
-            }
-        }
-
-        ObservableCollection<SudokuCellWrapper> sudokuCells;
-        ObservableCollection<SudokuCellWrapper> SudokuCells
-        {
-            get { return sudokuCells; }
-            set { SetProperty(ref sudokuCells, value); }
+            get { return gameBoard; }
+            set { SetProperty(ref gameBoard, value); }
         }
 
         Puzzle puzzle;
@@ -74,29 +63,29 @@ namespace Sudoku.Client.ViewModels
         {
             Puzzle = PuzzleFactory.GetPuzzle(Difficulty);
             Puzzle.CreatePuzzle();
-            SudokuCells = new ObservableCollection<SudokuCellWrapper>(MapToArrayEntity(Puzzle.PuzzleArray));
+            MapToArrayEntity(Puzzle.PuzzleArray);
         }
 
-        public static List<SudokuCellWrapper> MapToArrayEntity(int[,] array)
+
+        public List<SudokuCell> MapToArrayEntity(int[,] array)
         {
-            List<SudokuCellWrapper> arrayEntities = new List<SudokuCellWrapper>();
+            List<SudokuCell> cellList = new List<SudokuCell>();
             for (int i = 0; i < array.GetLength(0); i++)
             {
                 for (int j = 0; j < array.GetLength(1); j++)
                 {
-                    SudokuCellWrapper arrayEntity = new SudokuCellWrapper(new SudokuCell()
+                    SudokuCell cellEntity = new SudokuCell()
                     {
                         RowIndex = i,
                         ColumnIndex = j,
                         Value = array[i, j]
-                    });
-                    arrayEntities.Add(arrayEntity);
+                    };
+                    cellList.Add(cellEntity);
                 }
             }
-            return arrayEntities;
+            return cellList;
         }
     }
 
-    
 
 }
