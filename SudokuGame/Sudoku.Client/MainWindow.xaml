@@ -1,0 +1,36 @@
+﻿<Window x:Class="Sudoku.Client.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:system="clr-namespace:System;assembly=mscorlib"
+        xmlns:local="clr-namespace:Sudoku.Client"
+        xmlns:dataGrid2D="http://gu.se/DataGrid2D"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+   
+    <Grid>
+        <!--<TextBox HorizontalAlignment="Left" Height="23" Margin="65,57,0,0" TextWrapping="Wrap" Text="{Binding PuzzleArray[0-0]}" VerticalAlignment="Top" Width="120"/>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="203,57,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="342,57,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>-->
+        <DataGrid ItemsSource="{Binding SudokuCells}">
+            <!--<DataGrid.Columns>
+                <DataGridTextColumn Binding="{Binding Path=Value}" Header="#" Width="60"/>
+            </DataGrid.Columns>-->
+        </DataGrid>
+        <!--<DataGrid AutoGenerateColumns="False"
+          dataGrid2D:ItemsSource.Array2DTransposed="{Binding PuzzleArray}">
+            <DataGrid.Columns>
+                <DataGridTextColumn Binding="{Binding C0}" Header="" Width="*"/>
+                <DataGridTextColumn Binding="{Binding C1}" Header="" Width="*" />
+                <DataGridTextColumn Binding="{Binding C2}" Header="" Width="*"/>
+                <DataGridTextColumn Binding="{Binding C3}" Header="" Width="*"/>
+                <DataGridTextColumn Binding="{Binding C4}" Header="" Width="*"/>
+                <DataGridTextColumn Binding="{Binding C5}" Header="" Width="*"/>
+                <DataGridTextColumn Binding="{Binding C6}" Header="" Width="*"/>
+                <DataGridTextColumn Binding="{Binding C7}" Header="" Width="*"/>
+                <DataGridTextColumn Binding="{Binding C8}" Header="" Width="*"/>
+            </DataGrid.Columns>
+        </DataGrid>-->
+    </Grid>
+</Window>
