@@ -9,7 +9,7 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
 
-    <Grid>
+    <Grid Margin="50">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="Auto" />
             <ColumnDefinition Width="Auto" />
@@ -20,54 +20,62 @@
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
+        <Border BorderBrush="Black" BorderThickness="1"></Border>
+        <Border Grid.Column="1" BorderBrush="Black" BorderThickness="1"></Border>
+        <Border Grid.Column="2" BorderBrush="Black" BorderThickness="1"></Border>
+        <Border Grid.Row="1" Grid.Column="0" BorderBrush="Black" BorderThickness="1"></Border>
+        <Border Grid.Row="1" Grid.Column="1" BorderBrush="Black" BorderThickness="1"></Border>
+        <Border Grid.Row="1" Grid.Column="2" BorderBrush="Black" BorderThickness="1"></Border>
+        <Border Grid.Row="2" Grid.Column="0" BorderBrush="Black" BorderThickness="1"></Border>
+        <Border Grid.Row="2" Grid.Column="1" BorderBrush="Black" BorderThickness="1"></Border>
+        <Border Grid.Row="2" Grid.Column="2" BorderBrush="Black" BorderThickness="1"></Border>
+
         <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="Auto" />
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
 
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="Auto" />
-                <ColumnDefinition Width="Auto" />
-                <ColumnDefinition Width="Auto" />
-            </Grid.ColumnDefinitions>
-            <Grid.RowDefinitions>
-                <RowDefinition Height="Auto"/>
-                <RowDefinition Height="Auto"/>
-                <RowDefinition Height="Auto"/>
-            </Grid.RowDefinitions>
-
-            <TextBox x:Name="textBox00" HorizontalAlignment="Left" Height="23" Margin="5" TextWrapping="Wrap" VerticalAlignment="Top" Width="25" />
-            <TextBox x:Name="textBox01" Grid.Row="0" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="5" TextWrapping="Wrap" VerticalAlignment="Top" Width="25"/>
-            <TextBox x:Name="textBox02" Grid.Row="0" Grid.Column="2" HorizontalAlignment="Left" Height="23" Margin="5" TextWrapping="Wrap" VerticalAlignment="Top" Width="25"/>
-            <TextBox x:Name="textBox10" Grid.Row="1" Grid.Column="0" HorizontalAlignment="Left" Height="23" Margin="5" TextWrapping="Wrap" VerticalAlignment="Top" Width="25"/>
-            <TextBox x:Name="textBox11" Grid.Row="1" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="5" TextWrapping="Wrap" VerticalAlignment="Top" Width="25"/>
-            <TextBox x:Name="textBox12" Grid.Row="1" Grid.Column="2" HorizontalAlignment="Left" Height="23" Margin="5" TextWrapping="Wrap" VerticalAlignment="Top" Width="25"/>
-            <TextBox x:Name="textBox20" Grid.Row="2" Grid.Column="0" HorizontalAlignment="Left" Height="23" Margin="5" TextWrapping="Wrap" VerticalAlignment="Top" Width="25"/>
-            <TextBox x:Name="textBox21" Grid.Row="2" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="5" TextWrapping="Wrap" VerticalAlignment="Top" Width="25"/>
-            <TextBox x:Name="textBox22" Grid.Row="2" Grid.Column="2" HorizontalAlignment="Left" Height="23" Margin="5" TextWrapping="Wrap" VerticalAlignment="Top" Width="25"/>
-        </Grid>
+                <TextBox x:Name="textBox00"  TextAlignment="Center" Height="23" Margin="5" Text="{Binding GameBoard.Cell00}" VerticalAlignment="Top" Width="25" />
+                <TextBox x:Name="textBox01" Grid.Row="0" Grid.Column="1" TextAlignment="Center" Height="23" Margin="5" Text="{Binding GameBoard.Cell01}" VerticalAlignment="Top" Width="25"/>
+                <TextBox x:Name="textBox02" Grid.Row="0" Grid.Column="2" TextAlignment="Center" Height="23" Margin="5" Text="{Binding GameBoard.Cell02}" VerticalAlignment="Top" Width="25"/>
+                <TextBox x:Name="textBox10" Grid.Row="1" Grid.Column="0" TextAlignment="Center" Height="23" Margin="5" Text="{Binding GameBoard.Cell10}" VerticalAlignment="Top" Width="25"/>
+                <TextBox x:Name="textBox11" Grid.Row="1" Grid.Column="1" TextAlignment="Center" Height="23" Margin="5" Text="{Binding GameBoard.Cell11}" VerticalAlignment="Top" Width="25"/>
+                <TextBox x:Name="textBox12" Grid.Row="1" Grid.Column="2" TextAlignment="Center" Height="23" Margin="5" Text="{Binding GameBoard.Cell12}" VerticalAlignment="Top" Width="25"/>
+                <TextBox x:Name="textBox20" Grid.Row="2" Grid.Column="0" TextAlignment="Center" Height="23" Margin="5" Text="{Binding GameBoard.Cell20}" VerticalAlignment="Top" Width="25"/>
+                <TextBox x:Name="textBox21" Grid.Row="2" Grid.Column="1" TextAlignment="Center" Height="23" Margin="5" Text="{Binding GameBoard.Cell21}" VerticalAlignment="Top" Width="25"/>
+                <TextBox x:Name="textBox22" Grid.Row="2" Grid.Column="2" TextAlignment="Center" Height="23" Margin="5" Text="{Binding GameBoard.Cell22}" VerticalAlignment="Top" Width="25"/>
+            </Grid>
 
         <Grid Grid.Row="0" Grid.Column="1">
 
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="Auto" />
-                <ColumnDefinition Width="Auto" />
-                <ColumnDefinition Width="Auto" />
-            </Grid.ColumnDefinitions>
-            <Grid.RowDefinitions>
-                <RowDefinition Height="Auto"/>
-                <RowDefinition Height="Auto"/>
-                <RowDefinition Height="Auto"/>
-            </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="Auto" />
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
 
-            <TextBox x:Name="textBox03" HorizontalAlignment="Left" Height="23" Margin="5" TextWrapping="Wrap" VerticalAlignment="Top" Width="25" />
-            <TextBox x:Name="textBox04" Grid.Row="0" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="5" TextWrapping="Wrap" VerticalAlignment="Top" Width="25"/>
-            <TextBox x:Name="textBox05" Grid.Row="0" Grid.Column="2" HorizontalAlignment="Left" Height="23" Margin="5" TextWrapping="Wrap" VerticalAlignment="Top" Width="25"/>
-            <TextBox x:Name="textBox13" Grid.Row="1" Grid.Column="0" HorizontalAlignment="Left" Height="23" Margin="5" TextWrapping="Wrap" VerticalAlignment="Top" Width="25"/>
-            <TextBox x:Name="textBox14" Grid.Row="1" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="5" TextWrapping="Wrap" VerticalAlignment="Top" Width="25"/>
-            <TextBox x:Name="textBox15" Grid.Row="1" Grid.Column="2" HorizontalAlignment="Left" Height="23" Margin="5" TextWrapping="Wrap" VerticalAlignment="Top" Width="25"/>
-            <TextBox x:Name="textBox23" Grid.Row="2" Grid.Column="0" HorizontalAlignment="Left" Height="23" Margin="5" TextWrapping="Wrap" VerticalAlignment="Top" Width="25"/>
-            <TextBox x:Name="textBox24" Grid.Row="2" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="5" TextWrapping="Wrap" VerticalAlignment="Top" Width="25"/>
-            <TextBox x:Name="textBox25" Grid.Row="2" Grid.Column="2" HorizontalAlignment="Left" Height="23" Margin="5" TextWrapping="Wrap" VerticalAlignment="Top" Width="25"/>
+            <TextBox x:Name="textBox03" TextAlignment="Center" Height="23" Margin="5" Text="{Binding GameBoard.Cell03}" VerticalAlignment="Top" Width="25" />
+            <TextBox x:Name="textBox04" Grid.Row="0" Grid.Column="1" TextAlignment="Center" Height="23" Margin="5" Text="{Binding GameBoard.Cell04}" VerticalAlignment="Top" Width="25"/>
+            <TextBox x:Name="textBox05" Grid.Row="0" Grid.Column="2" TextAlignment="Center" Height="23" Margin="5" Text="{Binding GameBoard.Cell05}" VerticalAlignment="Top" Width="25"/>
+            <TextBox x:Name="textBox13" Grid.Row="1" Grid.Column="0" TextAlignment="Center" Height="23" Margin="5" Text="{Binding GameBoard.Cell13}" VerticalAlignment="Top" Width="25"/>
+            <TextBox x:Name="textBox14" Grid.Row="1" Grid.Column="1" TextAlignment="Center" Height="23" Margin="5" Text="{Binding GameBoard.Cell14}" VerticalAlignment="Top" Width="25"/>
+            <TextBox x:Name="textBox15" Grid.Row="1" Grid.Column="2" TextAlignment="Center" Height="23" Margin="5" Text="{Binding GameBoard.Cell15}" VerticalAlignment="Top" Width="25"/>
+            <TextBox x:Name="textBox23" Grid.Row="2" Grid.Column="0" TextAlignment="Center" Height="23" Margin="5" Text="{Binding GameBoard.Cell23}" VerticalAlignment="Top" Width="25"/>
+            <TextBox x:Name="textBox24" Grid.Row="2" Grid.Column="1" TextAlignment="Center" Height="23" Margin="5" Text="{Binding GameBoard.Cell24}" VerticalAlignment="Top" Width="25"/>
+            <TextBox x:Name="textBox25" Grid.Row="2" Grid.Column="2" TextAlignment="Center" Height="23" Margin="5" Text="{Binding GameBoard.Cell25}" VerticalAlignment="Top" Width="25"/>
         </Grid>
-
         <Grid Grid.Row="0" Grid.Column="2">
 
             <Grid.ColumnDefinitions>
@@ -81,19 +89,19 @@
                 <RowDefinition Height="Auto"/>
             </Grid.RowDefinitions>
 
-            <TextBox x:Name="textBox06" HorizontalAlignment="Left" Height="23" Margin="5" TextWrapping="Wrap" VerticalAlignment="Top" Width="25" />
-            <TextBox x:Name="textBox07" Grid.Row="0" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="5" TextWrapping="Wrap" VerticalAlignment="Top" Width="25"/>
-            <TextBox x:Name="textBox08" Grid.Row="0" Grid.Column="2" HorizontalAlignment="Left" Height="23" Margin="5" TextWrapping="Wrap" VerticalAlignment="Top" Width="25"/>
-            <TextBox x:Name="textBox16" Grid.Row="1" Grid.Column="0" HorizontalAlignment="Left" Height="23" Margin="5" TextWrapping="Wrap" VerticalAlignment="Top" Width="25"/>
-            <TextBox x:Name="textBox17" Grid.Row="1" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="5" TextWrapping="Wrap" VerticalAlignment="Top" Width="25"/>
-            <TextBox x:Name="textBox18" Grid.Row="1" Grid.Column="2" HorizontalAlignment="Left" Height="23" Margin="5" TextWrapping="Wrap" VerticalAlignment="Top" Width="25"/>
-            <TextBox x:Name="textBox26" Grid.Row="2" Grid.Column="0" HorizontalAlignment="Left" Height="23" Margin="5" TextWrapping="Wrap" VerticalAlignment="Top" Width="25"/>
-            <TextBox x:Name="textBox27" Grid.Row="2" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="5" TextWrapping="Wrap" VerticalAlignment="Top" Width="25"/>
-            <TextBox x:Name="textBox28" Grid.Row="2" Grid.Column="2" HorizontalAlignment="Left" Height="23" Margin="5" TextWrapping="Wrap" VerticalAlignment="Top" Width="25"/>
+            <TextBox x:Name="textBox06" TextAlignment="Center" Height="23" Margin="5" Text="{Binding GameBoard.Cell06}" VerticalAlignment="Top" Width="25" />
+            <TextBox x:Name="textBox07" Grid.Row="0" Grid.Column="1" TextAlignment="Center" Height="23" Margin="5" Text="{Binding GameBoard.Cell07}" VerticalAlignment="Top" Width="25"/>
+            <TextBox x:Name="textBox08" Grid.Row="0" Grid.Column="2" TextAlignment="Center" Height="23" Margin="5" Text="{Binding GameBoard.Cell08}" VerticalAlignment="Top" Width="25"/>
+            <TextBox x:Name="textBox16" Grid.Row="1" Grid.Column="0" TextAlignment="Center" Height="23" Margin="5" Text="{Binding GameBoard.Cell16}" VerticalAlignment="Top" Width="25"/>
+            <TextBox x:Name="textBox17" Grid.Row="1" Grid.Column="1" TextAlignment="Center" Height="23" Margin="5" Text="{Binding GameBoard.Cell17}" VerticalAlignment="Top" Width="25"/>
+            <TextBox x:Name="textBox18" Grid.Row="1" Grid.Column="2" TextAlignment="Center" Height="23" Margin="5" Text="{Binding GameBoard.Cell18}" VerticalAlignment="Top" Width="25"/>
+            <TextBox x:Name="textBox26" Grid.Row="2" Grid.Column="0" TextAlignment="Center" Height="23" Margin="5" Text="{Binding GameBoard.Cell26}" VerticalAlignment="Top" Width="25"/>
+            <TextBox x:Name="textBox27" Grid.Row="2" Grid.Column="1" TextAlignment="Center" Height="23" Margin="5" Text="{Binding GameBoard.Cell27}" VerticalAlignment="Top" Width="25"/>
+            <TextBox x:Name="textBox28" Grid.Row="2" Grid.Column="2" TextAlignment="Center" Height="23" Margin="5" Text="{Binding GameBoard.Cell28}" VerticalAlignment="Top" Width="25"/>
         </Grid>
 
-        <Grid Grid.Row="1" Grid.Column="0">
 
+        <Grid Grid.Row="1" Grid.Column="0">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="Auto" />
                 <ColumnDefinition Width="Auto" />
@@ -105,15 +113,15 @@
                 <RowDefinition Height="Auto"/>
             </Grid.RowDefinitions>
 
-            <TextBox x:Name="textBox30" HorizontalAlignment="Left" Height="23" Margin="5" TextWrapping="Wrap" VerticalAlignment="Top" Width="25" />
-            <TextBox x:Name="textBox31" Grid.Row="0" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="5" TextWrapping="Wrap" VerticalAlignment="Top" Width="25"/>
-            <TextBox x:Name="textBox32" Grid.Row="0" Grid.Column="2" HorizontalAlignment="Left" Height="23" Margin="5" TextWrapping="Wrap" VerticalAlignment="Top" Width="25"/>
-            <TextBox x:Name="textBox40" Grid.Row="1" Grid.Column="0" HorizontalAlignment="Left" Height="23" Margin="5" TextWrapping="Wrap" VerticalAlignment="Top" Width="25"/>
-            <TextBox x:Name="textBox41" Grid.Row="1" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="5" TextWrapping="Wrap" VerticalAlignment="Top" Width="25"/>
-            <TextBox x:Name="textBox42" Grid.Row="1" Grid.Column="2" HorizontalAlignment="Left" Height="23" Margin="5" TextWrapping="Wrap" VerticalAlignment="Top" Width="25"/>
-            <TextBox x:Name="textBox50" Grid.Row="2" Grid.Column="0" HorizontalAlignment="Left" Height="23" Margin="5" TextWrapping="Wrap" VerticalAlignment="Top" Width="25"/>
-            <TextBox x:Name="textBox51" Grid.Row="2" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="5" TextWrapping="Wrap" VerticalAlignment="Top" Width="25"/>
-            <TextBox x:Name="textBox52" Grid.Row="2" Grid.Column="2" HorizontalAlignment="Left" Height="23" Margin="5" TextWrapping="Wrap" VerticalAlignment="Top" Width="25"/>
+            <TextBox x:Name="textBox30" TextAlignment="Center" Height="23" Margin="5" Text="{Binding GameBoard.Cell30}" VerticalAlignment="Top" Width="25" />
+            <TextBox x:Name="textBox31" Grid.Row="0" Grid.Column="1" TextAlignment="Center" Height="23" Margin="5" Text="{Binding GameBoard.Cell31}" VerticalAlignment="Top" Width="25"/>
+            <TextBox x:Name="textBox32" Grid.Row="0" Grid.Column="2" TextAlignment="Center" Height="23" Margin="5" Text="{Binding GameBoard.Cell32}" VerticalAlignment="Top" Width="25"/>
+            <TextBox x:Name="textBox40" Grid.Row="1" Grid.Column="0" TextAlignment="Center" Height="23" Margin="5" Text="{Binding GameBoard.Cell40}" VerticalAlignment="Top" Width="25"/>
+            <TextBox x:Name="textBox41" Grid.Row="1" Grid.Column="1" TextAlignment="Center" Height="23" Margin="5" Text="{Binding GameBoard.Cell41}" VerticalAlignment="Top" Width="25"/>
+            <TextBox x:Name="textBox42" Grid.Row="1" Grid.Column="2" TextAlignment="Center" Height="23" Margin="5" Text="{Binding GameBoard.Cell42}" VerticalAlignment="Top" Width="25"/>
+            <TextBox x:Name="textBox50" Grid.Row="2" Grid.Column="0" TextAlignment="Center" Height="23" Margin="5" Text="{Binding GameBoard.Cell50}" VerticalAlignment="Top" Width="25"/>
+            <TextBox x:Name="textBox51" Grid.Row="2" Grid.Column="1" TextAlignment="Center" Height="23" Margin="5" Text="{Binding GameBoard.Cell51}" VerticalAlignment="Top" Width="25"/>
+            <TextBox x:Name="textBox52" Grid.Row="2" Grid.Column="2" TextAlignment="Center" Height="23" Margin="5" Text="{Binding GameBoard.Cell52}" VerticalAlignment="Top" Width="25"/>
         </Grid>
 
         <Grid Grid.Row="1" Grid.Column="1">
@@ -129,17 +137,16 @@
                 <RowDefinition Height="Auto"/>
             </Grid.RowDefinitions>
 
-            <TextBox x:Name="textBox33" HorizontalAlignment="Left" Height="23" Margin="5" TextWrapping="Wrap" VerticalAlignment="Top" Width="25" />
-            <TextBox x:Name="textBox34" Grid.Row="0" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="5" TextWrapping="Wrap" VerticalAlignment="Top" Width="25"/>
-            <TextBox x:Name="textBox35" Grid.Row="0" Grid.Column="2" HorizontalAlignment="Left" Height="23" Margin="5" TextWrapping="Wrap" VerticalAlignment="Top" Width="25"/>
-            <TextBox x:Name="textBox43" Grid.Row="1" Grid.Column="0" HorizontalAlignment="Left" Height="23" Margin="5" TextWrapping="Wrap" VerticalAlignment="Top" Width="25"/>
-            <TextBox x:Name="textBox44" Grid.Row="1" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="5" TextWrapping="Wrap" VerticalAlignment="Top" Width="25"/>
-            <TextBox x:Name="textBox45" Grid.Row="1" Grid.Column="2" HorizontalAlignment="Left" Height="23" Margin="5" TextWrapping="Wrap" VerticalAlignment="Top" Width="25"/>
-            <TextBox x:Name="textBox53" Grid.Row="2" Grid.Column="0" HorizontalAlignment="Left" Height="23" Margin="5" TextWrapping="Wrap" VerticalAlignment="Top" Width="25"/>
-            <TextBox x:Name="textBox54" Grid.Row="2" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="5" TextWrapping="Wrap" VerticalAlignment="Top" Width="25"/>
-            <TextBox x:Name="textBox55" Grid.Row="2" Grid.Column="2" HorizontalAlignment="Left" Height="23" Margin="5" TextWrapping="Wrap" VerticalAlignment="Top" Width="25"/>
+            <TextBox x:Name="textBox33" TextAlignment="Center" Height="23" Margin="5" Text="{Binding GameBoard.Cell33}" VerticalAlignment="Top" Width="25" />
+            <TextBox x:Name="textBox34" Grid.Row="0" Grid.Column="1" TextAlignment="Center" Height="23" Margin="5" Text="{Binding GameBoard.Cell34}" VerticalAlignment="Top" Width="25"/>
+            <TextBox x:Name="textBox35" Grid.Row="0" Grid.Column="2" TextAlignment="Center" Height="23" Margin="5" Text="{Binding GameBoard.Cell35}" VerticalAlignment="Top" Width="25"/>
+            <TextBox x:Name="textBox43" Grid.Row="1" Grid.Column="0" TextAlignment="Center" Height="23" Margin="5" Text="{Binding GameBoard.Cell43}" VerticalAlignment="Top" Width="25"/>
+            <TextBox x:Name="textBox44" Grid.Row="1" Grid.Column="1" TextAlignment="Center" Height="23" Margin="5" Text="{Binding GameBoard.Cell44}" VerticalAlignment="Top" Width="25"/>
+            <TextBox x:Name="textBox45" Grid.Row="1" Grid.Column="2" TextAlignment="Center" Height="23" Margin="5" Text="{Binding GameBoard.Cell45}" VerticalAlignment="Top" Width="25"/>
+            <TextBox x:Name="textBox53" Grid.Row="2" Grid.Column="0" TextAlignment="Center" Height="23" Margin="5" Text="{Binding GameBoard.Cell53}" VerticalAlignment="Top" Width="25"/>
+            <TextBox x:Name="textBox54" Grid.Row="2" Grid.Column="1" TextAlignment="Center" Height="23" Margin="5" Text="{Binding GameBoard.Cell54}" VerticalAlignment="Top" Width="25"/>
+            <TextBox x:Name="textBox55" Grid.Row="2" Grid.Column="2" TextAlignment="Center" Height="23" Margin="5" Text="{Binding GameBoard.Cell55}" VerticalAlignment="Top" Width="25"/>
         </Grid>
-
         <Grid Grid.Row="1" Grid.Column="2">
 
             <Grid.ColumnDefinitions>
@@ -153,19 +160,18 @@
                 <RowDefinition Height="Auto"/>
             </Grid.RowDefinitions>
 
-            <TextBox x:Name="textBox36" HorizontalAlignment="Left" Height="23" Margin="5" TextWrapping="Wrap" VerticalAlignment="Top" Width="25" />
-            <TextBox x:Name="textBox37" Grid.Row="0" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="5" TextWrapping="Wrap" VerticalAlignment="Top" Width="25"/>
-            <TextBox x:Name="textBox38" Grid.Row="0" Grid.Column="2" HorizontalAlignment="Left" Height="23" Margin="5" TextWrapping="Wrap" VerticalAlignment="Top" Width="25"/>
-            <TextBox x:Name="textBox46" Grid.Row="1" Grid.Column="0" HorizontalAlignment="Left" Height="23" Margin="5" TextWrapping="Wrap" VerticalAlignment="Top" Width="25"/>
-            <TextBox x:Name="textBox47" Grid.Row="1" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="5" TextWrapping="Wrap" VerticalAlignment="Top" Width="25"/>
-            <TextBox x:Name="textBox48" Grid.Row="1" Grid.Column="2" HorizontalAlignment="Left" Height="23" Margin="5" TextWrapping="Wrap" VerticalAlignment="Top" Width="25"/>
-            <TextBox x:Name="textBox56" Grid.Row="2" Grid.Column="0" HorizontalAlignment="Left" Height="23" Margin="5" TextWrapping="Wrap" VerticalAlignment="Top" Width="25"/>
-            <TextBox x:Name="textBox57" Grid.Row="2" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="5" TextWrapping="Wrap" VerticalAlignment="Top" Width="25"/>
-            <TextBox x:Name="textBox58" Grid.Row="2" Grid.Column="2" HorizontalAlignment="Left" Height="23" Margin="5" TextWrapping="Wrap" VerticalAlignment="Top" Width="25"/>
+            <TextBox x:Name="textBox36" TextAlignment="Center" Height="23" Margin="5" Text="{Binding GameBoard.Cell36}" VerticalAlignment="Top" Width="25" />
+            <TextBox x:Name="textBox37" Grid.Row="0" Grid.Column="1" TextAlignment="Center" Height="23" Margin="5" Text="{Binding GameBoard.Cell37}" VerticalAlignment="Top" Width="25"/>
+            <TextBox x:Name="textBox38" Grid.Row="0" Grid.Column="2" TextAlignment="Center" Height="23" Margin="5" Text="{Binding GameBoard.Cell38}" VerticalAlignment="Top" Width="25"/>
+            <TextBox x:Name="textBox46" Grid.Row="1" Grid.Column="0" TextAlignment="Center" Height="23" Margin="5" Text="{Binding GameBoard.Cell46}" VerticalAlignment="Top" Width="25"/>
+            <TextBox x:Name="textBox47" Grid.Row="1" Grid.Column="1" TextAlignment="Center" Height="23" Margin="5" Text="{Binding GameBoard.Cell47}" VerticalAlignment="Top" Width="25"/>
+            <TextBox x:Name="textBox48" Grid.Row="1" Grid.Column="2" TextAlignment="Center" Height="23" Margin="5" Text="{Binding GameBoard.Cell48}" VerticalAlignment="Top" Width="25"/>
+            <TextBox x:Name="textBox56" Grid.Row="2" Grid.Column="0" TextAlignment="Center" Height="23" Margin="5" Text="{Binding GameBoard.Cell56}" VerticalAlignment="Top" Width="25"/>
+            <TextBox x:Name="textBox57" Grid.Row="2" Grid.Column="1" TextAlignment="Center" Height="23" Margin="5" Text="{Binding GameBoard.Cell57}" VerticalAlignment="Top" Width="25"/>
+            <TextBox x:Name="textBox58" Grid.Row="2" Grid.Column="2" TextAlignment="Center" Height="23" Margin="5" Text="{Binding GameBoard.Cell58}" VerticalAlignment="Top" Width="25"/>
         </Grid>
 
-        <Grid Grid.Row="2" Grid.Column="0">
-
+        <Grid  Grid.Row="2" Grid.Column="0">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="Auto" />
                 <ColumnDefinition Width="Auto" />
@@ -177,15 +183,15 @@
                 <RowDefinition Height="Auto"/>
             </Grid.RowDefinitions>
 
-            <TextBox x:Name="textBox60" HorizontalAlignment="Left" Height="23" Margin="5" TextWrapping="Wrap" VerticalAlignment="Top" Width="25" />
-            <TextBox x:Name="textBox61" Grid.Row="0" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="5" TextWrapping="Wrap" VerticalAlignment="Top" Width="25"/>
-            <TextBox x:Name="textBox62" Grid.Row="0" Grid.Column="2" HorizontalAlignment="Left" Height="23" Margin="5" TextWrapping="Wrap" VerticalAlignment="Top" Width="25"/>
-            <TextBox x:Name="textBox70" Grid.Row="1" Grid.Column="0" HorizontalAlignment="Left" Height="23" Margin="5" TextWrapping="Wrap" VerticalAlignment="Top" Width="25"/>
-            <TextBox x:Name="textBox71" Grid.Row="1" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="5" TextWrapping="Wrap" VerticalAlignment="Top" Width="25"/>
-            <TextBox x:Name="textBox72" Grid.Row="1" Grid.Column="2" HorizontalAlignment="Left" Height="23" Margin="5" TextWrapping="Wrap" VerticalAlignment="Top" Width="25"/>
-            <TextBox x:Name="textBox80" Grid.Row="2" Grid.Column="0" HorizontalAlignment="Left" Height="23" Margin="5" TextWrapping="Wrap" VerticalAlignment="Top" Width="25"/>
-            <TextBox x:Name="textBox81" Grid.Row="2" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="5" TextWrapping="Wrap" VerticalAlignment="Top" Width="25"/>
-            <TextBox x:Name="textBox82" Grid.Row="2" Grid.Column="2" HorizontalAlignment="Left" Height="23" Margin="5" TextWrapping="Wrap" VerticalAlignment="Top" Width="25"/>
+            <TextBox x:Name="textBox60" TextAlignment="Center" Height="23" Margin="5" Text="{Binding GameBoard.Cell60}" VerticalAlignment="Top" Width="25" />
+            <TextBox x:Name="textBox61" Grid.Row="0" Grid.Column="1" TextAlignment="Center" Height="23" Margin="5" Text="{Binding GameBoard.Cell61}" VerticalAlignment="Top" Width="25"/>
+            <TextBox x:Name="textBox62" Grid.Row="0" Grid.Column="2" TextAlignment="Center" Height="23" Margin="5" Text="{Binding GameBoard.Cell62}" VerticalAlignment="Top" Width="25"/>
+            <TextBox x:Name="textBox70" Grid.Row="1" Grid.Column="0" TextAlignment="Center" Height="23" Margin="5" Text="{Binding GameBoard.Cell70}" VerticalAlignment="Top" Width="25"/>
+            <TextBox x:Name="textBox71" Grid.Row="1" Grid.Column="1" TextAlignment="Center" Height="23" Margin="5" Text="{Binding GameBoard.Cell71}" VerticalAlignment="Top" Width="25"/>
+            <TextBox x:Name="textBox72" Grid.Row="1" Grid.Column="2" TextAlignment="Center" Height="23" Margin="5" Text="{Binding GameBoard.Cell72}" VerticalAlignment="Top" Width="25"/>
+            <TextBox x:Name="textBox80" Grid.Row="2" Grid.Column="0" TextAlignment="Center" Height="23" Margin="5" Text="{Binding GameBoard.Cell80}" VerticalAlignment="Top" Width="25"/>
+            <TextBox x:Name="textBox81" Grid.Row="2" Grid.Column="1" TextAlignment="Center" Height="23" Margin="5" Text="{Binding GameBoard.Cell81}" VerticalAlignment="Top" Width="25"/>
+            <TextBox x:Name="textBox82" Grid.Row="2" Grid.Column="2" TextAlignment="Center" Height="23" Margin="5" Text="{Binding GameBoard.Cell82}" VerticalAlignment="Top" Width="25"/>
         </Grid>
 
         <Grid Grid.Row="2" Grid.Column="1">
@@ -201,17 +207,16 @@
                 <RowDefinition Height="Auto"/>
             </Grid.RowDefinitions>
 
-            <TextBox x:Name="textBox63" HorizontalAlignment="Left" Height="23" Margin="5" TextWrapping="Wrap" VerticalAlignment="Top" Width="25" />
-            <TextBox x:Name="textBox64" Grid.Row="0" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="5" TextWrapping="Wrap" VerticalAlignment="Top" Width="25"/>
-            <TextBox x:Name="textBox65" Grid.Row="0" Grid.Column="2" HorizontalAlignment="Left" Height="23" Margin="5" TextWrapping="Wrap" VerticalAlignment="Top" Width="25"/>
-            <TextBox x:Name="textBox73" Grid.Row="1" Grid.Column="0" HorizontalAlignment="Left" Height="23" Margin="5" TextWrapping="Wrap" VerticalAlignment="Top" Width="25"/>
-            <TextBox x:Name="textBox74" Grid.Row="1" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="5" TextWrapping="Wrap" VerticalAlignment="Top" Width="25"/>
-            <TextBox x:Name="textBox75" Grid.Row="1" Grid.Column="2" HorizontalAlignment="Left" Height="23" Margin="5" TextWrapping="Wrap" VerticalAlignment="Top" Width="25"/>
-            <TextBox x:Name="textBox83" Grid.Row="2" Grid.Column="0" HorizontalAlignment="Left" Height="23" Margin="5" TextWrapping="Wrap" VerticalAlignment="Top" Width="25"/>
-            <TextBox x:Name="textBox84" Grid.Row="2" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="5" TextWrapping="Wrap" VerticalAlignment="Top" Width="25"/>
-            <TextBox x:Name="textBox85" Grid.Row="2" Grid.Column="2" HorizontalAlignment="Left" Height="23" Margin="5" TextWrapping="Wrap" VerticalAlignment="Top" Width="25"/>
+            <TextBox x:Name="textBox63" TextAlignment="Center" Height="23" Margin="5" Text="{Binding GameBoard.Cell63}" VerticalAlignment="Top" Width="25" />
+            <TextBox x:Name="textBox64" Grid.Row="0" Grid.Column="1" TextAlignment="Center" Height="23" Margin="5" Text="{Binding GameBoard.Cell64}" VerticalAlignment="Top" Width="25"/>
+            <TextBox x:Name="textBox65" Grid.Row="0" Grid.Column="2" TextAlignment="Center" Height="23" Margin="5" Text="{Binding GameBoard.Cell65}" VerticalAlignment="Top" Width="25"/>
+            <TextBox x:Name="textBox73" Grid.Row="1" Grid.Column="0" TextAlignment="Center" Height="23" Margin="5" Text="{Binding GameBoard.Cell73}" VerticalAlignment="Top" Width="25"/>
+            <TextBox x:Name="textBox74" Grid.Row="1" Grid.Column="1" TextAlignment="Center" Height="23" Margin="5" Text="{Binding GameBoard.Cell74}" VerticalAlignment="Top" Width="25"/>
+            <TextBox x:Name="textBox75" Grid.Row="1" Grid.Column="2" TextAlignment="Center" Height="23" Margin="5" Text="{Binding GameBoard.Cell75}" VerticalAlignment="Top" Width="25"/>
+            <TextBox x:Name="textBox83" Grid.Row="2" Grid.Column="0" TextAlignment="Center" Height="23" Margin="5" Text="{Binding GameBoard.Cell83}" VerticalAlignment="Top" Width="25"/>
+            <TextBox x:Name="textBox84" Grid.Row="2" Grid.Column="1" TextAlignment="Center" Height="23" Margin="5" Text="{Binding GameBoard.Cell84}" VerticalAlignment="Top" Width="25"/>
+            <TextBox x:Name="textBox85" Grid.Row="2" Grid.Column="2" TextAlignment="Center" Height="23" Margin="5" Text="{Binding GameBoard.Cell85}" VerticalAlignment="Top" Width="25"/>
         </Grid>
-
         <Grid Grid.Row="2" Grid.Column="2">
 
             <Grid.ColumnDefinitions>
@@ -225,35 +230,17 @@
                 <RowDefinition Height="Auto"/>
             </Grid.RowDefinitions>
 
-            <TextBox x:Name="textBox66" HorizontalAlignment="Left" Height="23" Margin="5" TextWrapping="Wrap" VerticalAlignment="Top" Width="25" />
-            <TextBox x:Name="textBox67" Grid.Row="0" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="5" TextWrapping="Wrap" VerticalAlignment="Top" Width="25"/>
-            <TextBox x:Name="textBox68" Grid.Row="0" Grid.Column="2" HorizontalAlignment="Left" Height="23" Margin="5" TextWrapping="Wrap" VerticalAlignment="Top" Width="25"/>
-            <TextBox x:Name="textBox76" Grid.Row="1" Grid.Column="0" HorizontalAlignment="Left" Height="23" Margin="5" TextWrapping="Wrap" VerticalAlignment="Top" Width="25"/>
-            <TextBox x:Name="textBox77" Grid.Row="1" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="5" TextWrapping="Wrap" VerticalAlignment="Top" Width="25"/>
-            <TextBox x:Name="textBox78" Grid.Row="1" Grid.Column="2" HorizontalAlignment="Left" Height="23" Margin="5" TextWrapping="Wrap" VerticalAlignment="Top" Width="25"/>
-            <TextBox x:Name="textBox86" Grid.Row="2" Grid.Column="0" HorizontalAlignment="Left" Height="23" Margin="5" TextWrapping="Wrap" VerticalAlignment="Top" Width="25"/>
-            <TextBox x:Name="textBox87" Grid.Row="2" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="5" TextWrapping="Wrap" VerticalAlignment="Top" Width="25"/>
-            <TextBox x:Name="textBox88" Grid.Row="2" Grid.Column="2" HorizontalAlignment="Left" Height="23" Margin="5" TextWrapping="Wrap" VerticalAlignment="Top" Width="25"/>
+            <TextBox x:Name="textBox66" TextAlignment="Center" Height="23" Margin="5" Text="{Binding GameBoard.Cell66}" VerticalAlignment="Top" Width="25" />
+            <TextBox x:Name="textBox67" Grid.Row="0" Grid.Column="1" TextAlignment="Center" Height="23" Margin="5" Text="{Binding GameBoard.Cell67}" VerticalAlignment="Top" Width="25"/>
+            <TextBox x:Name="textBox68" Grid.Row="0" Grid.Column="2" TextAlignment="Center" Height="23" Margin="5" Text="{Binding GameBoard.Cell68}" VerticalAlignment="Top" Width="25"/>
+            <TextBox x:Name="textBox76" Grid.Row="1" Grid.Column="0" TextAlignment="Center" Height="23" Margin="5" Text="{Binding GameBoard.Cell76}" VerticalAlignment="Top" Width="25"/>
+            <TextBox x:Name="textBox77" Grid.Row="1" Grid.Column="1" TextAlignment="Center" Height="23" Margin="5" Text="{Binding GameBoard.Cell77}" VerticalAlignment="Top" Width="25"/>
+            <TextBox x:Name="textBox78" Grid.Row="1" Grid.Column="2" TextAlignment="Center" Height="23" Margin="5" Text="{Binding GameBoard.Cell78}" VerticalAlignment="Top" Width="25"/>
+            <TextBox x:Name="textBox86" Grid.Row="2" Grid.Column="0" TextAlignment="Center" Height="23" Margin="5" Text="{Binding GameBoard.Cell86}" VerticalAlignment="Top" Width="25"/>
+            <TextBox x:Name="textBox87" Grid.Row="2" Grid.Column="1" TextAlignment="Center" Height="23" Margin="5" Text="{Binding GameBoard.Cell87}" VerticalAlignment="Top" Width="25"/>
+            <TextBox x:Name="textBox88" Grid.Row="2" Grid.Column="2" TextAlignment="Center" Height="23" Margin="5" Text="{Binding GameBoard.Cell88}" VerticalAlignment="Top" Width="25"/>
         </Grid>
 
-        <!--<DataGrid ItemsSource="{Binding GameBoard.SudokuCells}" AutoGenerateColumns="False">
-            <DataGrid.Columns>
-                <DataGridTextColumn Binding="{Binding Path=Value}" Header="#" Width="60"/>
-            </DataGrid.Columns>
-        </DataGrid>-->
-        <!--<DataGrid AutoGenerateColumns="False"
-          dataGrid2D:ItemsSource.Array2DTransposed="{Binding PuzzleArray}">
-            <DataGrid.Columns>
-                <DataGridTextColumn Binding="{Binding C0}" Header="" Width="*"/>
-                <DataGridTextColumn Binding="{Binding C1}" Header="" Width="*" />
-                <DataGridTextColumn Binding="{Binding C2}" Header="" Width="*"/>
-                <DataGridTextColumn Binding="{Binding C3}" Header="" Width="*"/>
-                <DataGridTextColumn Binding="{Binding C4}" Header="" Width="*"/>
-                <DataGridTextColumn Binding="{Binding C5}" Header="" Width="*"/>
-                <DataGridTextColumn Binding="{Binding C6}" Header="" Width="*"/>
-                <DataGridTextColumn Binding="{Binding C7}" Header="" Width="*"/>
-                <DataGridTextColumn Binding="{Binding C8}" Header="" Width="*"/>
-            </DataGrid.Columns>
-        </DataGrid>-->
+
     </Grid>
 </Window>

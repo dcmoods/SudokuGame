@@ -27,12 +27,10 @@ namespace Sudoku.Client.ViewModels
 
         private void Init()
         {
+            Difficulty = Difficulty.Medium;
             Puzzle = PuzzleFactory.GetPuzzle(Difficulty);
             Puzzle.CreatePuzzle();
-            GameBoard = new GameBoardWrapper(new GameBoard()
-            {
-                SudokuCells = MapToArrayEntity(Puzzle.PuzzleArray)
-            });
+            GameBoard = new GameBoardWrapper(new GameBoard(Puzzle.PuzzleArray));
         }
 
         GameBoardWrapper gameBoard;

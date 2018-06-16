@@ -18,7 +18,8 @@
 			var simpleProperties = modelType.GetProperties().Where(p => p.PropertyType.IsValueType
 										 || p.PropertyType == typeof(string) 
 										 ||  p.PropertyType == typeof(IEnumerable<string>)
-										 || p.PropertyType == typeof(byte[])).ToList();
+										 || p.PropertyType == typeof(byte[])
+										 || p.PropertyType == typeof(int[,])).ToList();
 
 			var complexProperties = modelType.GetProperties().Except(simpleProperties)
 									.Where(p => p.PropertyType.IsClass && !typeof(IEnumerable).IsAssignableFrom(p.PropertyType)).ToList();
