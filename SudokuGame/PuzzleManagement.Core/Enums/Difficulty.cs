@@ -9,8 +9,8 @@ namespace PuzzleManagement.Core.Enums
     public enum Difficulty
     {
         Empty = 81,
-        Easy = 50,
-        Medium = 60,
-        Hard = 70
+        Easy = 45,
+        Medium = 48,
+        Hard = 52
     }
 }
