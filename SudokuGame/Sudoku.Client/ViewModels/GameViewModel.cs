@@ -27,7 +27,6 @@ namespace Sudoku.Client.ViewModels
 
         private void Init()
         {
-            Difficulty = Difficulty.Medium;
             Puzzle = PuzzleFactory.GetPuzzle(Difficulty);
             Puzzle.CreatePuzzle();
             GameBoard = new GameBoardWrapper(new GameBoard(Puzzle.PuzzleArray));
@@ -53,6 +52,7 @@ namespace Sudoku.Client.ViewModels
             }
         }
 
+       
         public Difficulty Difficulty { get; set; }
 
         public Command New { get; private set; }
@@ -61,28 +61,10 @@ namespace Sudoku.Client.ViewModels
         {
             Puzzle = PuzzleFactory.GetPuzzle(Difficulty);
             Puzzle.CreatePuzzle();
-            MapToArrayEntity(Puzzle.PuzzleArray);
         }
 
 
-        public List<SudokuCell> MapToArrayEntity(int[,] array)
-        {
-            List<SudokuCell> cellList = new List<SudokuCell>();
-            for (int i = 0; i < array.GetLength(0); i++)
-            {
-                for (int j = 0; j < array.GetLength(1); j++)
-                {
-                    SudokuCell cellEntity = new SudokuCell()
-                    {
-                        RowIndex = i,
-                        ColumnIndex = j,
-                        Value = array[i, j]
-                    };
-                    cellList.Add(cellEntity);
-                }
-            }
-            return cellList;
-        }
+        
     }
 
 

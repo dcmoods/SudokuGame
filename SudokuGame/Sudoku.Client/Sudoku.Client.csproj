@@ -74,6 +74,7 @@
     <Compile Include="Commands\Command.cs" />
     <Compile Include="Common\DialogService.cs" />
     <Compile Include="Common\ViewModel.cs" />
+    <Compile Include="Converter\ZeroToEmptyConverter.cs" />
     <Compile Include="ViewModels\GameViewModel.cs" />
     <Compile Include="Wrapper\Base\ChangeTrackingCollection.cs" />
     <Compile Include="Wrapper\Base\IValidatableTrackingObject.cs" />

@@ -32,7 +32,7 @@ namespace PuzzleManagement.Tests.Models
             Assert.IsNotNull(emptyPuzzle.PuzzleArray);
             BuildLogString(emptyPuzzle.PuzzleArray);
             WriteLog();
-            Assert.IsFalse(_log.Contains("0"));
+            Assert.IsTrue(_log.Contains("0"));
         }
 
         [TestMethod]

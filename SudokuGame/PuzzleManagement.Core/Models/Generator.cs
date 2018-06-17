@@ -160,15 +160,11 @@ namespace PuzzleManagement.Core.Models
             while (count != 0)
             {
                 Random rnd = new Random();
-                int cell = rnd.Next(0, GRIDSIZE * GRIDSIZE);
-
+                int cell = rnd.Next(0, (GRIDSIZE * GRIDSIZE));
+                
                 int row = (cell / GRIDSIZE);
                 int col = (cell % GRIDSIZE);
-                if (col != 0)
-                {
-                    col = col - 1;
-                }
-
+                
                 if (_puzzleArray[row,col] != 0)
                 {
                     count--;
