@@ -9,14 +9,22 @@ namespace Sudoku.ApplicationLayer.Models
 {
     public class GameBoard
     {
+        public GameBoard()
+        {
+            PuzzleArray = new int[9, 9];
+        }
+
         public GameBoard(int[,] puzzleArray)
         {
             PuzzleArray = puzzleArray;
         }
 
-        #region First Row of Cells
+        
 
         public int[,] PuzzleArray { get; set; }
+
+        #region First Row of Cells
+
 
         public int Cell00
         {

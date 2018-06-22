@@ -1,6 +1,7 @@
 ﻿using PuzzleManagement.Core.Enums;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics.Contracts;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -11,7 +12,8 @@ namespace PuzzleManagement.Core.Models
     {
         public Puzzle()
         {
-            Solver = Solver.Create();            
+            Solver = Solver.Create();
+            StartTime = DateTime.Now;
         }
 
         public Guid Id { get; set; }
@@ -20,14 +22,17 @@ namespace PuzzleManagement.Core.Models
         protected Difficulty Difficulty { get; set; }
         public int[,] PuzzleArray { get; set; }
         public int[,] SolvedPuzzleArray { get; set; }
-        protected DateTime StartTime { get; set; }
-        protected DateTime EndTime { get; set; }
+        public DateTime StartTime { get; set; }
+        public DateTime EndTime { get; set; }
 
         public abstract void CreatePuzzle();
 
         public bool Solve()
         {
-            var result = Solver.Solve(PuzzleArray);
+            Contract.Requires(PuzzleArray != null);
+
+            SolvedPuzzleArray = (int[,])PuzzleArray.Clone();
+            var result = Solver.Solve(SolvedPuzzleArray);
             SolvedPuzzleArray = Solver.SolvedPuzzle;
             return result;
         }
