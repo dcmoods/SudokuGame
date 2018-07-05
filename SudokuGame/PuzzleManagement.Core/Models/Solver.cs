@@ -1,8 +1,20 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿/*  * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+*
+*                    SUDOKU GAME AND SOLVER
+*                                                                       
+* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+*   
+*              Name: Solver.cs
+*     Creation Date: 6/20/2018
+*            Author: M. Moody
+*  
+*       Description: This file defines a solver object 
+*       that is responsible for the solving Sudoku puzzles.
+* 
+*	Code Review:	
+*  
+* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
 
 namespace PuzzleManagement.Core.Models
 {
@@ -24,11 +36,12 @@ namespace PuzzleManagement.Core.Models
         {
             int row = 0;
             int col = 0;
+            //copy puzzle
             SolvedPuzzle = puzzleArray;
             //check for empty cells
             if (!FindEmptyCell(SolvedPuzzle, ref row, ref col)) return true;
 
-            //for all possible digits
+            //all possible digits
             for (int number = 1; number <= 9; number++)
             {
                 //check if valid

@@ -53,5 +53,11 @@
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\PuzzleManagement.Core\PuzzleManagement.Core.csproj">
+      <Project>{4C92E1ED-746F-43C7-99CC-791A08A9BD70}</Project>
+      <Name>PuzzleManagement.Core</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

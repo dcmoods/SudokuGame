@@ -1,10 +1,23 @@
-﻿using PuzzleManagement.Core.Enums;
+﻿/*  * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+*
+*                    SUDOKU GAME AND SOLVER
+*                                                                       
+* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+*   
+*              Name: Puzzle.cs
+*     Creation Date: 6/20/2018
+*            Author: M. Moody
+*  
+*       Description: This file defines a base puzzle object. 
+* 
+*	Code Review:	
+*  
+* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
+
+using PuzzleManagement.Core.Enums;
 using System;
-using System.Collections.Generic;
 using System.Diagnostics.Contracts;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace PuzzleManagement.Core.Models
 {
@@ -14,6 +27,7 @@ namespace PuzzleManagement.Core.Models
         {
             Solver = Solver.Create();
             StartTime = DateTime.Now;
+            Id = Guid.NewGuid();
         }
 
         public Guid Id { get; set; }

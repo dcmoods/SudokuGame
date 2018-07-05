@@ -1,10 +1,23 @@
-﻿using PuzzleManagement.Core.Enums;
+﻿/*  * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+*
+*                    SUDOKU GAME AND SOLVER
+*                                                                       
+* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+*   
+*              Name: PuzzleFactory.cs
+*     Creation Date: 6/20/2018
+*            Author: M. Moody
+*  
+*       Description: This file defines a puzzle factory 
+*       and is responsible for returning a new puzzle. 
+* 
+*	Code Review:	
+*  
+* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
+
+using PuzzleManagement.Core.Enums;
 using PuzzleManagement.Core.Models;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace PuzzleManagement.Core.Factories
 {
