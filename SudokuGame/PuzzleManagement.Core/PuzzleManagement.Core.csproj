@@ -47,14 +47,14 @@
   <ItemGroup>
     <Compile Include="Enums\Difficulty.cs" />
     <Compile Include="Factories\PuzzleFactory.cs" />
-    <Compile Include="Models\ArrayEntity.cs" />
+    <Compile Include="Models\Data\ArrayEntity.cs" />
     <Compile Include="Models\HardPuzzle.cs" />
     <Compile Include="Models\MediumPuzzle.cs" />
     <Compile Include="Models\EasyPuzzle.cs" />
     <Compile Include="Models\EmptyPuzzle.cs" />
     <Compile Include="Models\Generator.cs" />
     <Compile Include="Models\Puzzle.cs" />
-    <Compile Include="Models\PuzzleEntity.cs" />
+    <Compile Include="Models\Data\PuzzleEntity.cs" />
     <Compile Include="Models\Solver.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

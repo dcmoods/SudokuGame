@@ -33,7 +33,7 @@ namespace PuzzleManagement.Core.Models
         public Guid Id { get; set; }
         protected Solver Solver { get; set; }
         protected Generator Generator { get; set; }
-        protected Difficulty Difficulty { get; set; }
+        public Difficulty Difficulty { get; set; }
         public int[,] PuzzleArray { get; set; }
         public int[,] SolvedPuzzleArray { get; set; }
         public DateTime StartTime { get; set; }

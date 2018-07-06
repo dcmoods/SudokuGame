@@ -8,9 +8,10 @@ namespace PuzzleManagement.Core.Models
 {
     public class ArrayEntity
     {
-        public Guid Id { get; set; }
+        public int Id { get; set; }
         public int RowIndex { get; set; }
         public int ColumnIndex { get; set; }
         public int Value { get; set; }
+        public string PuzzleEntityId { get; set; }
     }
 }
