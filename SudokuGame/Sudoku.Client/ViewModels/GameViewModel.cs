@@ -1,12 +1,14 @@
 ﻿using PuzzleManagement.Core.Enums;
 using PuzzleManagement.Core.Factories;
 using PuzzleManagement.Core.Models;
+using PuzzleManagement.Persistence;
 using Sudoku.ApplicationLayer.Models;
 using Sudoku.Client.Commands;
 using Sudoku.Client.Common;
 using Sudoku.Client.Wrapper;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics.Contracts;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -15,6 +17,7 @@ namespace Sudoku.Client.ViewModels
     public class GameViewModel : ViewModel
     {
         private GameBoardWrapper gameBoard;
+        private GameRepository gameRepository;
         private Puzzle puzzle;
         private bool isLoading;
         private Difficulty difficulty;
@@ -28,10 +31,15 @@ namespace Sudoku.Client.ViewModels
         private void Init()
         {
             puzzle = PuzzleFactory.GetPuzzle(Difficulty);
+            gameRepository = new GameRepository();
+
             New = new Command(async () => await NewCommandAsync());
             Solve = new Command(async () => await SolveCommandAsync());
             Check = new Command(async () => await CheckPuzzleAsync());
+            Save = new Command(async () => await SavePuzzleAsync());
             Difficulty = Difficulty.Easy;
+
+            
         }
 
         public GameBoardWrapper GameBoard
@@ -62,6 +70,14 @@ namespace Sudoku.Client.ViewModels
         public Command New { get; private set; }
         public Command Solve { get; private set; }
         public Command Check { get; private set; }
+        public Command Save { get; private set; }
+
+        private void Load(int? puzzleId = null)
+        {
+            puzzle = puzzleId.HasValue ?
+                gameRepository.GetPuzzleById(puzzleId.Value) :
+                PuzzleFactory.GetPuzzle(Difficulty);
+        }
 
         private async Task NewCommandAsync()
         {
@@ -86,6 +102,14 @@ namespace Sudoku.Client.ViewModels
             {
                 await Task.Run(() => puzzle.Solve());
                 GameBoard = new GameBoardWrapper(new GameBoard(puzzle.SolvedPuzzleArray));
+
+                //GameBoard.PropertyChanged += (s, e) =>
+                //{
+                //    if (e.PropertyName == nameof(GameBoard.IsChanged) && GameBoard.IsValid)
+                //    {
+                //        this.puzzle.State = ObjectState.Modified;
+                //    }
+                //};
             }
             finally
             {
@@ -108,6 +132,23 @@ namespace Sudoku.Client.ViewModels
                 {
                     GameMessage = "This is not a correct solution.";
                 }
+            }
+            finally
+            {
+                IsLoading = false;
+            }
+        }
+
+        private async Task SavePuzzleAsync()
+        {
+            IsLoading = true;
+            try
+            {
+                await Task.Run(() => gameRepository.SaveGame(puzzle));
+            }
+            catch (Exception ex)
+            {
+                GameMessage = ex.Message;
             }
             finally
             {

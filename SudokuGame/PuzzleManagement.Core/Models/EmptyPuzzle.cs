@@ -26,7 +26,7 @@ namespace PuzzleManagement.Core.Models
         }
 
         public override void CreatePuzzle()
-        {
+        {            
             PuzzleArray = Generator.Generate();
         }
 

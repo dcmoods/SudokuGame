@@ -20,7 +20,7 @@ namespace PuzzleManagement.Persistence.Mapping
         {
             var difficulty = (Difficulty)puzzleEntity.Difficulty;
             var puzzle = PuzzleFactory.GetPuzzle(difficulty);
-            puzzle.Id = new Guid(puzzleEntity.Id);
+            puzzle.Id = puzzleEntity.Id;
             int[,] array;
             MapToArray(puzzleEntity.WorkingPuzzleArray, out array);
             puzzle.PuzzleArray = array;
@@ -31,7 +31,7 @@ namespace PuzzleManagement.Persistence.Mapping
         {
             PuzzleEntity puzzleEntity = new PuzzleEntity()
             {
-                Id = puzzle.Id.ToString(),
+                Id = puzzle.Id,
                 Difficulty = (int)puzzle.Difficulty,
                 WorkingPuzzleArray = MapToArrayEntity(puzzle.PuzzleArray),
             };

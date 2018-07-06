@@ -46,7 +46,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Enums\Difficulty.cs" />
+    <Compile Include="Enums\ObjectState.cs" />
     <Compile Include="Factories\PuzzleFactory.cs" />
+    <Compile Include="Interfaces\IStateObject.cs" />
     <Compile Include="Models\Data\ArrayEntity.cs" />
     <Compile Include="Models\HardPuzzle.cs" />
     <Compile Include="Models\MediumPuzzle.cs" />
@@ -58,9 +60,7 @@
     <Compile Include="Models\Solver.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Interfaces\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>

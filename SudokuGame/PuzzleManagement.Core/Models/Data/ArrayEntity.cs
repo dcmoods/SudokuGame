@@ -12,6 +12,6 @@ namespace PuzzleManagement.Core.Models
         public int RowIndex { get; set; }
         public int ColumnIndex { get; set; }
         public int Value { get; set; }
-        public string PuzzleEntityId { get; set; }
+        public int PuzzleEntityId { get; set; }
     }
 }

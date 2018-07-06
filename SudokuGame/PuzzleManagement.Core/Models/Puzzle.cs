@@ -16,21 +16,22 @@
 * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
 
 using PuzzleManagement.Core.Enums;
+using PuzzleManagement.Core.Interfaces;
 using System;
 using System.Diagnostics.Contracts;
 
 namespace PuzzleManagement.Core.Models
 {
-    public abstract class Puzzle
+    public abstract class Puzzle : IStateObject
     {
         public Puzzle()
         {
             Solver = Solver.Create();
             StartTime = DateTime.Now;
-            Id = Guid.NewGuid();
+            State = ObjectState.Added;
         }
 
-        public Guid Id { get; set; }
+        public int Id { get; set; }
         protected Solver Solver { get; set; }
         protected Generator Generator { get; set; }
         public Difficulty Difficulty { get; set; }
@@ -38,6 +39,7 @@ namespace PuzzleManagement.Core.Models
         public int[,] SolvedPuzzleArray { get; set; }
         public DateTime StartTime { get; set; }
         public DateTime EndTime { get; set; }
+        public ObjectState State { get; set; }
 
         public abstract void CreatePuzzle();
 

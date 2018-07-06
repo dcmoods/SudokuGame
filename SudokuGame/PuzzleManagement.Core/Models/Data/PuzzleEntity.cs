@@ -13,9 +13,11 @@ namespace PuzzleManagement.Core.Models
             WorkingPuzzleArray = new List<ArrayEntity>();
         }
 
-        public string Id { get; set; }
+        public int Id { get; set; }
+        public string Name { get; set; }
         public int Difficulty { get; set; }
         public int TimeElapsed { get; set; }
+        public string LastSave { get; set; }
         public virtual List<ArrayEntity> WorkingPuzzleArray { get; set; }
     }
 }
