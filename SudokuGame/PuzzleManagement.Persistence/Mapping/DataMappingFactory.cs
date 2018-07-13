@@ -33,6 +33,7 @@ namespace PuzzleManagement.Persistence.Mapping
             {
                 Id = puzzle.Id,
                 Difficulty = (int)puzzle.Difficulty,
+                LastSave = DateTime.Now.ToString(),
                 WorkingPuzzleArray = MapToArrayEntity(puzzle.PuzzleArray),
             };
 
@@ -52,9 +53,9 @@ namespace PuzzleManagement.Persistence.Mapping
         private List<ArrayEntity> MapToArrayEntity(int[,] array)
         {
             List<ArrayEntity> arrayEntities = new List<ArrayEntity>();
-            for (int i = 0; i < array.GetLength(0); i++)
+            for (int i = 0; i < 9; i++)
             {
-                for (int j = 0; j < array.GetLength(1); j++)
+                for (int j = 0; j < 9; j++)
                 {
                     ArrayEntity arrayEntity = new ArrayEntity();
                     arrayEntity.RowIndex = i;

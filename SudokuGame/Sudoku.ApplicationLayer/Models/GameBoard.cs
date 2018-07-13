@@ -1,13 +1,9 @@
-﻿using PuzzleManagement.Core.Models;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using PuzzleManagement.Core.Enums;
+using PuzzleManagement.Core.Interfaces;
 
 namespace Sudoku.ApplicationLayer.Models
 {
-    public class GameBoard
+    public class GameBoard : IStateObject
     {
         public GameBoard()
         {
@@ -18,7 +14,6 @@ namespace Sudoku.ApplicationLayer.Models
         {
             PuzzleArray = puzzleArray;
         }
-
         
 
         public int[,] PuzzleArray { get; set; }
@@ -535,6 +530,8 @@ namespace Sudoku.ApplicationLayer.Models
             get { return PuzzleArray[8, 8]; }
             set { PuzzleArray[8, 8] = value; }
         }
+
+        public ObjectState State { get; set; }
         #endregion
     }
 }

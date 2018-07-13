@@ -1,38 +1,29 @@
-﻿using PuzzleManagement.Core.Enums;
-using PuzzleManagement.Core.Models;
+﻿using PuzzleManagement.Core.Models;
 using PuzzleManagement.Persistence.Mapping;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Diagnostics.Contracts;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace PuzzleManagement.Persistence
 {
     public class GameRepository
     {
         private DataMappingFactory _mapper;
-        public GameRepository()
+        public GameRepository(DataMappingFactory mappingFactory)
         {
-            _mapper = new DataMappingFactory();
+            _mapper = mappingFactory;
         }
 
-        public List<Puzzle> GetPuzzleList()
+        public List<PuzzleEntity> GetPuzzleList()
         {
             using (var context = new GameContext())
             {
                 var puzzleEntities = context.PuzzleEntities.ToList();
-                List<Puzzle> puzzles = new List<Puzzle>();
-                foreach(var entity in puzzleEntities)
-                {
-                    puzzles.Add(_mapper.MapPuzzleEntityToPuzzle(entity));
-                }
-                return puzzles;
+                return puzzleEntities;
             }
         }
-
 
         public Puzzle GetPuzzleById(int id)
         {
@@ -43,36 +34,43 @@ namespace PuzzleManagement.Persistence
             }
         }
 
-        public void SaveGame(Puzzle puzzle)
+        public int SaveGame(Puzzle puzzle)
         {
             Contract.Assert(puzzle != null);
             using (var context = new GameContext())
             {
                 var puzzleEntity = _mapper.MapPuzzleToPuzzleEntity(puzzle);
-                context.PuzzleEntities.Add(puzzleEntity);
-                context.Entry(puzzleEntity).State = GetEntityState(puzzle.State);
-                foreach(var array in puzzleEntity.WorkingPuzzleArray)
-                {
-                    context.Entry(array).State = GetEntityState(puzzle.State);
-                }
-                context.SaveChanges();
-            }
-        }
 
-        private EntityState GetEntityState(ObjectState state)
-        {
-            switch (state)
-            {
-                case ObjectState.Unchanged:
-                    return EntityState.Unchanged;
-                case ObjectState.Added:
-                    return EntityState.Added;
-                case ObjectState.Modified:
-                    return EntityState.Modified;
-                case ObjectState.Deleted:
-                    return EntityState.Deleted;
-                default:
-                    return EntityState.Detached;
+                if(puzzle.Id != 0)
+                {
+                    var entity = context.PuzzleEntities
+                        .Include(p => p.WorkingPuzzleArray)
+                        .FirstOrDefault(p => p.Id == puzzleEntity.Id);
+
+                    if (entity == null)
+                    {
+                        return 0;
+                    }
+
+                    foreach (var arrayItem in entity.WorkingPuzzleArray)
+                    {
+                        var value = puzzle.PuzzleArray[arrayItem.RowIndex, arrayItem.ColumnIndex];
+                        arrayItem.Value = value;
+                    }
+
+                    context.Entry(entity).CurrentValues.SetValues(puzzleEntity);
+                }
+                else
+                {
+                    context.PuzzleEntities.Add(puzzleEntity);                    
+                    foreach(var array in puzzleEntity.WorkingPuzzleArray)
+                    {
+                        context.Entry(array).State = EntityState.Added;
+                    }
+                }
+
+                context.SaveChanges();
+                return puzzleEntity.Id;
             }
         }
 

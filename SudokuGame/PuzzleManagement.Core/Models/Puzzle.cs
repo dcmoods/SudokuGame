@@ -28,7 +28,6 @@ namespace PuzzleManagement.Core.Models
         {
             Solver = Solver.Create();
             StartTime = DateTime.Now;
-            State = ObjectState.Added;
         }
 
         public int Id { get; set; }

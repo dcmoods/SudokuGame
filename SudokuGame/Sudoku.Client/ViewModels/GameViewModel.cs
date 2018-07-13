@@ -1,14 +1,15 @@
-﻿using PuzzleManagement.Core.Enums;
+﻿using Prism.Events;
+using PuzzleManagement.Core.Enums;
 using PuzzleManagement.Core.Factories;
 using PuzzleManagement.Core.Models;
 using PuzzleManagement.Persistence;
 using Sudoku.ApplicationLayer.Models;
 using Sudoku.Client.Commands;
 using Sudoku.Client.Common;
+using Sudoku.Client.Events;
 using Sudoku.Client.Wrapper;
 using System;
 using System.Collections.Generic;
-using System.Diagnostics.Contracts;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -16,30 +17,27 @@ namespace Sudoku.Client.ViewModels
 {
     public class GameViewModel : ViewModel
     {
+        private GameRepository _gameRepository;
+        private IEventAggregator _eventAggregator;
         private GameBoardWrapper gameBoard;
-        private GameRepository gameRepository;
         private Puzzle puzzle;
         private bool isLoading;
         private Difficulty difficulty;
         private string gameMessage;
 
-        public GameViewModel()
+        public GameViewModel(IEventAggregator eventAggregator,
+                             GameRepository gameRepository)
         {
-            Init();
-        }
-
-        private void Init()
-        {
-            puzzle = PuzzleFactory.GetPuzzle(Difficulty);
-            gameRepository = new GameRepository();
+            _gameRepository = gameRepository;
+            _eventAggregator = eventAggregator;
 
             New = new Command(async () => await NewCommandAsync());
             Solve = new Command(async () => await SolveCommandAsync());
             Check = new Command(async () => await CheckPuzzleAsync());
             Save = new Command(async () => await SavePuzzleAsync());
+            Load = new Command(LoadCommand);
+            puzzle = PuzzleFactory.GetPuzzle(Difficulty);
             Difficulty = Difficulty.Easy;
-
-            
         }
 
         public GameBoardWrapper GameBoard
@@ -71,12 +69,24 @@ namespace Sudoku.Client.ViewModels
         public Command Solve { get; private set; }
         public Command Check { get; private set; }
         public Command Save { get; private set; }
+        public Command Load { get; private set; }
 
-        private void Load(int? puzzleId = null)
+        public async Task LoadPuzzle(int? puzzleId = null)
         {
-            puzzle = puzzleId.HasValue ?
-                gameRepository.GetPuzzleById(puzzleId.Value) :
-                PuzzleFactory.GetPuzzle(Difficulty);
+            if (puzzleId.HasValue)
+            {
+                puzzle = _gameRepository.GetPuzzleById(puzzleId.Value);
+                GameBoard = new GameBoardWrapper(new GameBoard(puzzle.PuzzleArray));
+            }
+            else
+            {
+                puzzle = PuzzleFactory.GetPuzzle(Difficulty);
+                await Task.Run(() => puzzle.CreatePuzzle());
+                GameBoard = new GameBoardWrapper(new GameBoard(puzzle.PuzzleArray)
+                {
+                    State = ObjectState.Added
+                });
+            }
         }
 
         private async Task NewCommandAsync()
@@ -85,9 +95,7 @@ namespace Sudoku.Client.ViewModels
             GameMessage = string.Empty;
             try
             {
-                puzzle = PuzzleFactory.GetPuzzle(Difficulty);
-                await Task.Run(() => puzzle.CreatePuzzle());
-                GameBoard = new GameBoardWrapper(new GameBoard(puzzle.PuzzleArray));
+                await LoadPuzzle();
             }
             finally
             {
@@ -100,16 +108,9 @@ namespace Sudoku.Client.ViewModels
             IsLoading = true;
             try
             {
+                GameBoard.RejectChanges();
                 await Task.Run(() => puzzle.Solve());
                 GameBoard = new GameBoardWrapper(new GameBoard(puzzle.SolvedPuzzleArray));
-
-                //GameBoard.PropertyChanged += (s, e) =>
-                //{
-                //    if (e.PropertyName == nameof(GameBoard.IsChanged) && GameBoard.IsValid)
-                //    {
-                //        this.puzzle.State = ObjectState.Modified;
-                //    }
-                //};
             }
             finally
             {
@@ -122,7 +123,7 @@ namespace Sudoku.Client.ViewModels
             IsLoading = true;
             try
             {
-                puzzle.PuzzleArray = GameBoard.PuzzleArray;
+                await SavePuzzleAsync();
                 var result = await Task.Run(() => puzzle.Check());
                 if (result)
                 {
@@ -144,7 +145,10 @@ namespace Sudoku.Client.ViewModels
             IsLoading = true;
             try
             {
-                await Task.Run(() => gameRepository.SaveGame(puzzle));
+                puzzle.State = GameBoard.State;
+                var puzzleId = await Task.Run(() => _gameRepository.SaveGame(puzzle));
+                GameBoard.AcceptChanges();
+                await LoadPuzzle(puzzleId);
             }
             catch (Exception ex)
             {
@@ -155,6 +159,12 @@ namespace Sudoku.Client.ViewModels
                 IsLoading = false;
             }
         }
+
+        private void LoadCommand()
+        {
+            _eventAggregator.GetEvent<OpenLoadGameEvent>().Publish();
+        }
+
     }
 
 

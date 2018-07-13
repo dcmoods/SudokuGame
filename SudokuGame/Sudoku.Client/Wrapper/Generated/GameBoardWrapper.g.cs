@@ -831,5 +831,15 @@ namespace Sudoku.Client.Wrapper
 		public System.Int32 Cell88OriginalValue => GetOriginalValue<System.Int32>(nameof(Cell88));
 
 		public bool Cell88IsChanged => GetIsChanged(nameof(Cell88));
+
+		public PuzzleManagement.Core.Enums.ObjectState State
+		{
+			get { return GetValue<PuzzleManagement.Core.Enums.ObjectState>(); }
+			set { SetValue(value); }
+		}
+			
+		public PuzzleManagement.Core.Enums.ObjectState StateOriginalValue => GetOriginalValue<PuzzleManagement.Core.Enums.ObjectState>(nameof(State));
+
+		public bool StateIsChanged => GetIsChanged(nameof(State));
 	}	
 }
