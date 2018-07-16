@@ -24,30 +24,16 @@ namespace Sudoku.Client.Wrapper
             Model = model;
             _originalValues = new Dictionary<string, object>();
             _trackingObjects = new List<IValidatableTrackingObject>();
-            //InitializeComplexProperties(model);
-            //InitializeCollectionProperties(model);
+           
             Validate();      
         }
         
-        //protected virtual void InitializeComplexProperties(T model)
-        //{
-        //}
-
-        //protected virtual void InitializeCollectionProperties(T model)
-        //{
-        //}
-
         public T Model { get; private set; }        
 
         public bool IsChanged => _originalValues.Count > 0 || _trackingObjects.Any(t => t.IsChanged); 
 
         public bool IsValid => !HasErrors && _trackingObjects.All(t => t.IsValid);
 
-        //public ObjectState State
-        //{
-        //    get { return GetValue<ObjectState>(); }
-        //    set { SetValue(value); }
-        //}
 
         public void AcceptChanges()
         {
@@ -166,58 +152,6 @@ namespace Sudoku.Client.Wrapper
                 Model.State = ObjectState.Unchanged;
             }
         }
-
-
-        //protected void RegisterCollection<TWrapper, TModel>(ChangeTrackingCollection<TWrapper> wrapperCollection,
-        //                        List<TModel> modelCollection) where TWrapper : ModelWrapper<TModel> 
-        //{
-        //    wrapperCollection.CollectionChanged += (s, e) =>
-        //    {
-        //        modelCollection.Clear();
-        //        modelCollection.AddRange(wrapperCollection.Select(w => w.Model));
-
-        //        if (e.OldItems != null)
-        //        {
-        //            foreach(var item in e.OldItems.Cast<TWrapper>())
-        //            {
-        //            }
-        //        }
-        //        if(e.NewItems != null)
-        //        {
-        //            foreach (var item in e.NewItems.Cast<TWrapper>())
-        //            {
-        //                modelCollection.Add(item.Model);                       
-        //            }
-        //        }
-        //    };
-        //    RegisterTrackingObject(wrapperCollection);
-        //}
-
-        //protected void RegisterComplex<TModel>(ModelWrapper<TModel> wrapper) where TModel : class
-        //{
-        //    RegisterTrackingObject(wrapper);
-        //}        
-
-        //private void RegisterTrackingObject(IValidatableTrackingObject trackingObject)
-        //{
-        //    if (!_trackingObjects.Contains(trackingObject))
-        //    {
-        //        _trackingObjects.Add(trackingObject);
-        //        trackingObject.PropertyChanged += TrackingObjectPropertyChanged;
-        //    }
-        //}
-
-        //private void TrackingObjectPropertyChanged(object sender, PropertyChangedEventArgs e)
-        //{
-        //    if(e.PropertyName == nameof(IsChanged))
-        //    {
-        //        OnPropertyChanged(nameof(IsChanged));
-        //    }
-        //    else if (e.PropertyName == nameof(IsValid))
-        //    {
-        //        OnPropertyChanged(nameof(IsValid));
-        //    }
-        //}
 
         public virtual IEnumerable<ValidationResult> Validate(ValidationContext validationContext)
         {

@@ -110,6 +110,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Behaviors\ChangeBehavior.cs" />
     <Compile Include="Commands\Command.cs" />
     <Compile Include="Common\DialogService.cs" />
     <Compile Include="Common\ViewModel.cs" />
@@ -126,10 +127,10 @@
     <Compile Include="Views\LoadGameView.xaml.cs">
       <DependentUpon>LoadGameView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Wrapper\Base\ChangeTrackingCollection.cs" />
     <Compile Include="Wrapper\Base\IValidatableTrackingObject.cs" />
     <Compile Include="Wrapper\Base\ModelWrapper.cs" />
     <Compile Include="Wrapper\Base\NotifyDataErrorInfoBase.cs" />
+    <Compile Include="Wrapper\Custom\GameBoardWrapper.cs" />
     <Compile Include="Wrapper\Generated\GameBoardWrapper.g.cs" />
     <Compile Include="Wrapper\Generated\GenerateModelWrappers1.cs">
       <AutoGen>True</AutoGen>
@@ -148,6 +149,14 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="Styles\Brushes.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Styles\TextBox.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\GameView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -207,9 +216,7 @@
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Wrapper\Custom\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <WCFMetadata Include="Connected Services\" />
   </ItemGroup>

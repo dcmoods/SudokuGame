@@ -36,6 +36,7 @@ namespace Sudoku.Client.ViewModels
             Check = new Command(async () => await CheckPuzzleAsync());
             Save = new Command(async () => await SavePuzzleAsync());
             Load = new Command(LoadCommand);
+            Undo = new Command(CanUndo, UndoCommand);
             puzzle = PuzzleFactory.GetPuzzle(Difficulty);
             Difficulty = Difficulty.Easy;
         }
@@ -70,6 +71,7 @@ namespace Sudoku.Client.ViewModels
         public Command Check { get; private set; }
         public Command Save { get; private set; }
         public Command Load { get; private set; }
+        public Command Undo { get; private set; }
 
         public async Task LoadPuzzle(int? puzzleId = null)
         {
@@ -165,6 +167,15 @@ namespace Sudoku.Client.ViewModels
             _eventAggregator.GetEvent<OpenLoadGameEvent>().Publish();
         }
 
+        private void UndoCommand()
+        {
+            GameBoard.RejectChanges();
+        }
+
+        private bool CanUndo()
+        {
+            return (GameBoard.IsChanged && GameBoard.IsValid);
+        }
     }
 
 
