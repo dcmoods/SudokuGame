@@ -1,8 +1,21 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿/*  * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+*
+*                    SUDOKU GAME AND SOLVER
+*                                                                       
+* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+*   
+*              Name: Command.cs
+*     Creation Date: 7/11/2018
+*            Author: M. Moody
+*  
+*       Description: This class defines Commands used for button click on the UI.
+* 
+*	Code Review:	
+*  
+* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
+
+using System;
 using System.Windows.Input;
 
 namespace Sudoku.Client.Commands

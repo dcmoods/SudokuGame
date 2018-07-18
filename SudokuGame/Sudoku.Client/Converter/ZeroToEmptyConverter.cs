@@ -1,9 +1,22 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Globalization;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿/*  * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+*
+*                    SUDOKU GAME AND SOLVER
+*                                                                       
+* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+*   
+*              Name: ZeroToEmptyConverter.cs
+*     Creation Date: 7/11/2018
+*            Author: M. Moody
+*  
+*       Description: This class converts any illegal value (non-numeric)
+*       input to a cell to an empty string.
+* 
+*	Code Review:	
+*  
+* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
+
+using System;
 using System.Windows.Data;
 
 namespace Sudoku.Client.Converter

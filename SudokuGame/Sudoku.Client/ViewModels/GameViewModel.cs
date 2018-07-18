@@ -1,4 +1,21 @@
-﻿using Prism.Events;
+﻿/*  * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+*
+*                    SUDOKU GAME AND SOLVER
+*                                                                       
+* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+*   
+*              Name: GameViewModel.cs
+*     Creation Date: 7/15/2018
+*            Author: M. Moody
+*  
+*       Description: This class defines the logic used in game play by the UI.
+* 
+*	Code Review:	
+*  
+* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
+
+using Prism.Events;
 using PuzzleManagement.Core.Enums;
 using PuzzleManagement.Core.Factories;
 using PuzzleManagement.Core.Models;

@@ -8,7 +8,7 @@
         xmlns:vm="clr-namespace:Sudoku.Client.ViewModels"
         xmlns:views="clr-namespace:Sudoku.Client.Views"
         mc:Ignorable="d"
-        Title="MainWindow" Height="500" Width="750">
+        Title="Sudoku Game &amp; Solver" Height="500" Width="750">
 
     <Window.Resources>
         <DataTemplate DataType="{x:Type vm:GameViewModel}" >

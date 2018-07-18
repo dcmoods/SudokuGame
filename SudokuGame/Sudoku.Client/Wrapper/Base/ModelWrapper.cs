@@ -1,8 +1,28 @@
-﻿using PuzzleManagement.Core.Enums;
+﻿/*  * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+*
+*                    SUDOKU GAME AND SOLVER
+*                                                                       
+* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+*   
+*              Name: ModelWrapper.cs
+*     Creation Date: 7/15/2018
+*            Author: M. Moody
+*  
+*       Description: This class is used to define a Wrapper that encapsulate
+*       a Model Object, such as GameBoard, and track validity, changes, 
+*       and store original values. Concrete ModelWrappers are generated 
+*       through the use of a T4 Template file in the Generated folder.
+* 
+*	Code Review:	
+*  
+* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
+
+
+using PuzzleManagement.Core.Enums;
 using PuzzleManagement.Core.Interfaces;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Runtime.CompilerServices;

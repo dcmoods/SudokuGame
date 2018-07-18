@@ -1,18 +1,33 @@
-﻿using PuzzleManagement.Core.Enums;
+﻿/*  * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+*
+*                    SUDOKU GAME AND SOLVER
+*                                                                       
+* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+*   
+*              Name: PuzzleMapper.cs
+*     Creation Date: 7/11/2018
+*            Author: M. Moody
+*  
+*       Description: This file is used for Mapping Puzzles to PuzzleEntities
+*                    before persistence and fetching.
+* 
+*	Code Review:	
+*  
+* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
+
+using PuzzleManagement.Core.Enums;
 using PuzzleManagement.Core.Factories;
 using PuzzleManagement.Core.Models;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace PuzzleManagement.Persistence.Mapping
 {
-    public class DataMappingFactory
+    public class PuzzleMapper
     {
 
-        public DataMappingFactory()
+        public PuzzleMapper()
         {
         }
 

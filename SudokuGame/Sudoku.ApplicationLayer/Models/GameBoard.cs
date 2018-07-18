@@ -1,4 +1,23 @@
-﻿using PuzzleManagement.Core.Enums;
+﻿/*  * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+*
+*                    SUDOKU GAME AND SOLVER
+*                                                                       
+* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+*   
+*              Name: GameBoard.cs
+*     Creation Date: 7/11/2018
+*            Author: M. Moody
+*  
+*       Description: This file is used to hold the game board data,
+*       and access the puzzle information for the UI.
+* 
+*	Code Review:	
+*  
+* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
+
+
+using PuzzleManagement.Core.Enums;
 using PuzzleManagement.Core.Interfaces;
 
 namespace Sudoku.ApplicationLayer.Models

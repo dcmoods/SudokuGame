@@ -1,4 +1,22 @@
-﻿using PuzzleManagement.Core.Models;
+﻿/*  * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+*
+*                    SUDOKU GAME AND SOLVER
+*                                                                       
+* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+*   
+*              Name: GameContext.cs
+*     Creation Date: 7/11/2018
+*            Author: M. Moody
+*  
+*       Description: This file defines the context used 
+*                    by the ORM to access the database. 
+* 
+*	Code Review:	
+*  
+* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
+
+using PuzzleManagement.Core.Models;
 using System.Data.Entity;
 using System.Data.Entity.ModelConfiguration.Conventions;
 

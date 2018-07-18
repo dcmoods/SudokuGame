@@ -1,8 +1,26 @@
-﻿using Prism.Events;
+﻿/*  * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+*
+*                    SUDOKU GAME AND SOLVER
+*                                                                       
+* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+*   
+*              Name: MainWindowViewModel.cs
+*     Creation Date: 7/15/2018
+*            Author: M. Moody
+*  
+*       Description: This class is used to define the navigation between 
+*       the load and game play screens, as well as, resolve all 
+*       dependencies for viewmodels.
+* 
+*	Code Review:	
+*  
+* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
+
+using Prism.Events;
 using Sudoku.Client.Common;
 using Sudoku.Client.DI;
 using Sudoku.Client.Events;
-using System;
 using System.Diagnostics.Contracts;
 using Unity;
 

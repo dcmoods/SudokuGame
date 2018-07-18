@@ -1,4 +1,21 @@
-﻿using Sudoku.Client.Common;
+﻿/*  * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+*
+*                    SUDOKU GAME AND SOLVER
+*                                                                       
+* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+*   
+*              Name: NotifyDataErrorInfoBase.cs
+*     Creation Date: 7/15/2018
+*            Author: M. Moody
+*  
+*       Description: This class is used the track errors on inheriting objects.
+* 
+*	Code Review:	
+*  
+* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
+
+using Sudoku.Client.Common;
 using System;
 using System.Collections;
 using System.Collections.Generic;

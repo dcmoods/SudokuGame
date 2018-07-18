@@ -1,4 +1,21 @@
-﻿using Prism.Events;
+﻿/*  * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+*
+*                    SUDOKU GAME AND SOLVER
+*                                                                       
+* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+*   
+*              Name: LoadGameViewModel.cs
+*     Creation Date: 7/15/2018
+*            Author: M. Moody
+*  
+*       Description: This class defines the logic used in loading a game by the UI.
+* 
+*	Code Review:	
+*  
+* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
+
+using Prism.Events;
 using PuzzleManagement.Core.Models;
 using PuzzleManagement.Persistence;
 using Sudoku.Client.Commands;

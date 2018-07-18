@@ -1,4 +1,24 @@
-﻿using System;
+﻿/*  * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+*
+*                    SUDOKU GAME AND SOLVER
+*                                                                       
+* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+*   
+*              Name: ChangeBehavior.cs
+*     Creation Date: 7/11/2018
+*            Author: M. Moody
+*  
+*       Description: This class tracks changes and converts 
+*       data based on the changes. The primary purpose is for 
+*       triggering the changes to background color of 
+*       game board cells when they are updated/valid.
+* 
+*	Code Review:	
+*  
+* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
+
+using System;
 using System.Collections.Generic;
 using System.Windows;
 using System.Windows.Controls;

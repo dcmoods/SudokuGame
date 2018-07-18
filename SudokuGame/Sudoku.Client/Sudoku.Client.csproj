@@ -112,7 +112,6 @@
     </ApplicationDefinition>
     <Compile Include="Behaviors\ChangeBehavior.cs" />
     <Compile Include="Commands\Command.cs" />
-    <Compile Include="Common\DialogService.cs" />
     <Compile Include="Common\ViewModel.cs" />
     <Compile Include="Converter\ZeroToEmptyConverter.cs" />
     <Compile Include="DI\ContainerHelper.cs" />

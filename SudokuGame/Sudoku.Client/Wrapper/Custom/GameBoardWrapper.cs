@@ -1,4 +1,21 @@
-﻿using System.Collections.Generic;
+﻿/*  * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+*
+*                    SUDOKU GAME AND SOLVER
+*                                                                       
+* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+*   
+*              Name: GameBoardWrapper.cs
+*     Creation Date: 7/11/2018
+*            Author: M. Moody
+*  
+*       Description: This is a partial class of GameBoardWrapper used for validation. 
+* 
+*	Code Review:	
+*  
+* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
+
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
 namespace Sudoku.Client.Wrapper

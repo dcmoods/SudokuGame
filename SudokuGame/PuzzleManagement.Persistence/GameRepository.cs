@@ -1,4 +1,21 @@
-﻿using PuzzleManagement.Core.Models;
+﻿/*  * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+*
+*                    SUDOKU GAME AND SOLVER
+*                                                                       
+* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+*   
+*              Name: GameRepository.cs
+*     Creation Date: 7/11/2018
+*            Author: M. Moody
+*  
+*       Description: This file defines a Repository for persistence of puzzles. 
+* 
+*	Code Review:	
+*  
+* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
+
+using PuzzleManagement.Core.Models;
 using PuzzleManagement.Persistence.Mapping;
 using System;
 using System.Collections.Generic;
@@ -10,8 +27,8 @@ namespace PuzzleManagement.Persistence
 {
     public class GameRepository
     {
-        private DataMappingFactory _mapper;
-        public GameRepository(DataMappingFactory mappingFactory)
+        private PuzzleMapper _mapper;
+        public GameRepository(PuzzleMapper mappingFactory)
         {
             _mapper = mappingFactory;
         }
