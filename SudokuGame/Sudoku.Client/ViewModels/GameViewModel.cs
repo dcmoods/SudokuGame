@@ -55,7 +55,7 @@ namespace Sudoku.Client.ViewModels
             Load = new Command(LoadCommand);
             Undo = new Command(CanUndo, UndoCommand);
             puzzle = PuzzleFactory.GetPuzzle(Difficulty);
-            Difficulty = Difficulty.Easy;
+            Difficulty = Difficulty.Empty;
         }
 
         public GameBoardWrapper GameBoard

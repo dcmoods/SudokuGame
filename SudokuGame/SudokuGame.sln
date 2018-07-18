@@ -17,6 +17,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sudoku.Client", "Sudoku.Cli
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sudoku.ApplicationLayer", "Sudoku.ApplicationLayer\Sudoku.ApplicationLayer.csproj", "{2C4D0BB5-90E6-493A-86C2-8B5CB900CE07}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SudokuClient.Tests", "SudokuClient.Tests\SudokuClient.Tests.csproj", "{62AA3317-2DCF-4710-875A-17CAC06BBA14}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -43,6 +45,10 @@ Global
 		{2C4D0BB5-90E6-493A-86C2-8B5CB900CE07}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2C4D0BB5-90E6-493A-86C2-8B5CB900CE07}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2C4D0BB5-90E6-493A-86C2-8B5CB900CE07}.Release|Any CPU.Build.0 = Release|Any CPU
+		{62AA3317-2DCF-4710-875A-17CAC06BBA14}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{62AA3317-2DCF-4710-875A-17CAC06BBA14}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{62AA3317-2DCF-4710-875A-17CAC06BBA14}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{62AA3317-2DCF-4710-875A-17CAC06BBA14}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -53,6 +59,7 @@ Global
 		{6C997ED2-7913-4431-89C6-75F137893963} = {F80C99BB-9777-4753-A069-32AF0903B0F9}
 		{513CD391-C595-45A1-B4E9-3F296513528B} = {5942432A-3F83-4FFD-8235-40FE16ED094B}
 		{2C4D0BB5-90E6-493A-86C2-8B5CB900CE07} = {5942432A-3F83-4FFD-8235-40FE16ED094B}
+		{62AA3317-2DCF-4710-875A-17CAC06BBA14} = {5942432A-3F83-4FFD-8235-40FE16ED094B}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {9C3CB9DD-58D0-4B12-9A0A-24A8E071A362}

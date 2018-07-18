@@ -30,9 +30,11 @@
                 <Button Height="25" Margin="0,0,0,5" Width="100" 
                         Grid.Row="1" Command="{Binding New}">New</Button>
                 <Button Height="25" Margin="0,0,0,5" Width="100" 
+                        Grid.Row="2" Command="{Binding Undo}">Undo Changes</Button>
+                <Button Height="25" Margin="0,0,0,5" Width="100" 
                         Grid.Row="2" Command="{Binding Check}">Check</Button>
                 <Button Height="25" Margin="0,0,0,5" Width="100" 
-                        Grid.Row="2" Command="{Binding Solve}">Solve</Button>
+                        Grid.Row="2" Command="{Binding Solve}">Show Solution</Button>
                 <Button Height="25" Margin="0,0,0,5" Width="100" 
                         Grid.Row="2" Command="{Binding Save}">Save</Button>
                 <Button Height="25" Margin="0,0,0,5" Width="100" 
