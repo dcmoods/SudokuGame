@@ -115,6 +115,7 @@
     <Compile Include="Common\ViewModel.cs" />
     <Compile Include="Converter\ZeroToEmptyConverter.cs" />
     <Compile Include="DI\ContainerHelper.cs" />
+    <Compile Include="Events\CancelLoadGameEvent.cs" />
     <Compile Include="Events\LoadGameEvent.cs" />
     <Compile Include="Events\OpenLoadGameEvent.cs" />
     <Compile Include="ViewModels\GameViewModel.cs" />

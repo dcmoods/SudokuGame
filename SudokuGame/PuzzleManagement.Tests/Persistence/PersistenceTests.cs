@@ -63,5 +63,57 @@ namespace PuzzleManagement.Tests.Persistence
             }
         }
 
+        [TestMethod]
+        public void ShouldLoadPuzzleEntities()
+        {
+            var gameRepo = new GameRepository(new PuzzleMapper());
+            var puzzleEntities = gameRepo.GetPuzzleList();
+            Assert.IsTrue(puzzleEntities.Count > 0);
+        }
+
+        [TestMethod]
+        public void ShouldGetPuzzleEntityAndReturnPuzzleFromRepo()
+        {
+            var gameRepo = new GameRepository(new PuzzleMapper());
+            var puzzle = gameRepo.GetPuzzleById(1);
+            Assert.IsNotNull(puzzle);
+        }
+
+        [TestMethod]
+        public void ShouldSavePuzzle()
+        {
+
+            var gameRepo = new GameRepository(new PuzzleMapper());
+            var puzzleEntities = gameRepo.GetPuzzleList();
+            Assert.IsNotNull(puzzleEntities);
+            var originalPuzzleCount = puzzleEntities.Count;
+
+            var puzzle = PuzzleFactory.GetPuzzle(Core.Enums.Difficulty.Medium);
+            Assert.IsInstanceOfType(puzzle, typeof(MediumPuzzle));
+            puzzle.CreatePuzzle();
+            Assert.IsNotNull(puzzle.PuzzleArray);            
+            
+            gameRepo.SaveGame(puzzle);
+            puzzleEntities = gameRepo.GetPuzzleList();
+            Assert.IsNotNull(puzzleEntities);
+            Assert.AreNotEqual(originalPuzzleCount, puzzleEntities.Count);
+        }
+
+        [TestMethod]
+        public void ShouldDeletePuzzle()
+        {
+            var gameRepo = new GameRepository(new PuzzleMapper());
+            var puzzleEntities = gameRepo.GetPuzzleList();
+            Assert.IsNotNull(puzzleEntities);
+
+            var originalPuzzleCount = puzzleEntities.Count;
+            var puzzle = gameRepo.GetPuzzleById(puzzleEntities.Last().Id);
+            puzzle.State = Core.Enums.ObjectState.Deleted;
+            gameRepo.DeletePuzzle(puzzle);
+
+            puzzleEntities = gameRepo.GetPuzzleList();
+            Assert.IsNotNull(puzzleEntities);
+            Assert.AreNotEqual(originalPuzzleCount, puzzleEntities.Count);
+        }
     }
 }

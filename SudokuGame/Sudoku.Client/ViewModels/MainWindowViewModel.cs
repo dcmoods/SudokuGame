@@ -21,6 +21,7 @@ using Prism.Events;
 using Sudoku.Client.Common;
 using Sudoku.Client.DI;
 using Sudoku.Client.Events;
+using System;
 using System.Diagnostics.Contracts;
 using Unity;
 
@@ -42,6 +43,7 @@ namespace Sudoku.Client.ViewModels
 
             _eventAggregator.GetEvent<LoadGameEvent>().Subscribe(GameLoaded);
             _eventAggregator.GetEvent<OpenLoadGameEvent>().Subscribe(OnOpenLoadGame);
+            _eventAggregator.GetEvent<CancelLoadGameEvent>().Subscribe(OnCancelLoadGame);
 
             CurrentViewModel = GameViewModel;
         }
@@ -74,6 +76,11 @@ namespace Sudoku.Client.ViewModels
         void OnOpenLoadGame()
         {
             CurrentViewModel = LoadGameViewModel;
+        }
+
+        void OnCancelLoadGame()
+        {
+            CurrentViewModel = GameViewModel;
         }
     }
 }

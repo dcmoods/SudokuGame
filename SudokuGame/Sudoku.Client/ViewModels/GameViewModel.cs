@@ -49,9 +49,9 @@ namespace Sudoku.Client.ViewModels
             _eventAggregator = eventAggregator;
 
             New = new Command(async () => await NewCommandAsync());
-            Solve = new Command(async () => await SolveCommandAsync());
-            Check = new Command(async () => await CheckPuzzleAsync());
-            Save = new Command(async () => await SavePuzzleAsync());
+            Solve = new Command(CanSolveCheck, async() => await SolveCommandAsync());
+            Check = new Command(CanSolveCheck, async () => await CheckPuzzleAsync());
+            Save = new Command(CanSave, async() => await SavePuzzleAsync());
             Load = new Command(LoadCommand);
             Undo = new Command(CanUndo, UndoCommand);
             puzzle = PuzzleFactory.GetPuzzle(Difficulty);
@@ -191,7 +191,17 @@ namespace Sudoku.Client.ViewModels
 
         private bool CanUndo()
         {
-            return (GameBoard.IsChanged && GameBoard.IsValid);
+            return (GameBoard != null && GameBoard.IsChanged && GameBoard.IsValid);
+        }
+
+        private bool CanSolveCheck()
+        {
+            return GameBoard != null;
+        }
+
+        private bool CanSave()
+        {
+            return (GameBoard != null && GameBoard.IsChanged && GameBoard.IsValid);
         }
     }
 

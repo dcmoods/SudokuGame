@@ -91,5 +91,16 @@ namespace PuzzleManagement.Persistence
             }
         }
 
+        public void DeletePuzzle(Puzzle puzzle)
+        {
+            Contract.Assert(puzzle != null);
+            using (var context = new GameContext())
+            {
+                var puzzleEntity = context.PuzzleEntities.Find(puzzle.Id);
+                context.Entry(puzzleEntity).State = EntityState.Deleted;
+                context.SaveChanges();
+            }
+        }
+
     }
 }

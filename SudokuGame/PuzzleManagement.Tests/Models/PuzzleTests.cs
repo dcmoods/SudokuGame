@@ -77,6 +77,19 @@ namespace PuzzleManagement.Tests.Models
             Assert.AreEqual((int)Difficulty.Hard, _log.Count(s => s == '0'));
         }
 
+        [TestMethod]
+        public void ShouldCheckForWinAndNotMatch()
+        {
+            var hardPuzzle = new HardPuzzle();
+            Assert.IsInstanceOfType(hardPuzzle, typeof(HardPuzzle));
+            Assert.IsInstanceOfType(hardPuzzle, typeof(Puzzle));
+            hardPuzzle.CreatePuzzle();
+            Assert.IsNotNull(hardPuzzle.PuzzleArray);
+
+            var result = hardPuzzle.Check();
+            Assert.IsFalse(result);
+        }
+
         private void WriteLog()
         {
             Debug.WriteLine(_log);

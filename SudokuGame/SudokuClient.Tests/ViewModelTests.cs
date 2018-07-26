@@ -28,7 +28,7 @@ namespace SudokuClient.Tests
                 _mockEventAggregator.Object, _mockGameRepository.Object);
 
             Assert.IsInstanceOfType(gameViewModel, typeof(GameViewModel));
-            Assert.AreEqual(Difficulty.Easy, gameViewModel.Difficulty);
+            Assert.AreEqual(Difficulty.Empty, gameViewModel.Difficulty);
         }
 
         [TestMethod]
@@ -51,7 +51,7 @@ namespace SudokuClient.Tests
                 _mockEventAggregator.Object, _mockGameRepository.Object);
 
             Assert.IsInstanceOfType(gameViewModel, typeof(GameViewModel));
-            Assert.AreEqual(Difficulty.Easy, gameViewModel.Difficulty);
+            Assert.AreEqual(Difficulty.Empty, gameViewModel.Difficulty);
 
             gameViewModel.Difficulty = Difficulty.Hard;
             Assert.AreEqual(Difficulty.Hard, gameViewModel.Difficulty);

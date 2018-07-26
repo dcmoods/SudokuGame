@@ -73,7 +73,7 @@ namespace Sudoku.Client.ViewModels
 
         private void CancelCommand()
         {
-            throw new NotImplementedException();
+            _eventAggregator.GetEvent<CancelLoadGameEvent>().Publish();
         }
     }
 }
