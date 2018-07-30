@@ -23,6 +23,11 @@ namespace PuzzleManagement.Core.Factories
 {
     public class PuzzleFactory
     {
+        /// <summary>
+        /// This method is a factory method to puzzle types.
+        /// </summary>
+        /// <param name="difficulty">Difficulty of puzzle to return</param>
+        /// <returns>Concrete puzzle object of selected difficulty</returns>
         public static Puzzle GetPuzzle(Difficulty difficulty)
         {
             switch (difficulty)

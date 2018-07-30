@@ -17,6 +17,10 @@
 
 namespace PuzzleManagement.Core.Enums
 {
+    /// <summary>
+    /// This Enum is used to determine the difficulty of puzzle objects.
+    /// The numbers represent the amount of empty cells a puzzle will have.
+    /// </summary>
     public enum Difficulty
     {
         Empty = 81,

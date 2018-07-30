@@ -48,6 +48,11 @@ namespace Sudoku.Client.ViewModels
             Load = new Command(LoadCommand);
             Cancel = new Command(CancelCommand);
 
+            RefreshSaves();
+        }
+
+        public void RefreshSaves()
+        {
             SavedPuzzles = _gameRepository.GetPuzzleList();
         }
 

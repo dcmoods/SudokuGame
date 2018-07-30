@@ -75,6 +75,7 @@ namespace Sudoku.Client.ViewModels
 
         void OnOpenLoadGame()
         {
+            LoadGameViewModel.RefreshSaves();
             CurrentViewModel = LoadGameViewModel;
         }
 

@@ -18,20 +18,28 @@
 
 using PuzzleManagement.Core.Enums;
 using System;
+using System.Diagnostics.Contracts;
 
 namespace PuzzleManagement.Core.Models
 {
     public class Generator
     {
 
-        private const int GRIDSIZE = 9;
-        private const int SUBGRIDSIZE = 3;
+        private const int GRIDSIZE = 9; //Main gird size of board
+        private const int SUBGRIDSIZE = 3; //Subgrid size of board
 
-        private Difficulty _difficulty;
-        private int[,] _puzzleArray;
+        private Difficulty _difficulty; //Difficulty to be set
+        private int[,] _puzzleArray; //int array to store generated puzzle.
 
+
+        /// <summary>
+        /// Factory method for construction.
+        /// </summary>
+        /// <param name="difficulty">Level of difficulty</param>
+        /// <returns>Generator Object</returns>
         public static Generator Create(Difficulty difficulty)
         {
+            Contract.Result<Generator>();
             return new Generator(difficulty);
         }
 
@@ -41,6 +49,10 @@ namespace PuzzleManagement.Core.Models
             _difficulty = difficulty;
         }
 
+        /// <summary>
+        /// This method generates a new puzzle array.
+        /// </summary>
+        /// <returns>int puzzle array.</returns>
         public int[,] Generate()
         {
             FillDiagonal();
@@ -49,6 +61,10 @@ namespace PuzzleManagement.Core.Models
             return _puzzleArray;
         }
 
+
+        /// <summary>
+        /// This method fills the array subgrids diagonally. 
+        /// </summary>
         private void FillDiagonal()
         {
             for (int i = 0; i < GRIDSIZE; i = i + SUBGRIDSIZE)
@@ -57,6 +73,10 @@ namespace PuzzleManagement.Core.Models
             }
         }
 
+        /// <summary>
+        /// This method generates a random number 1 - 9
+        /// </summary>
+        /// <returns>random number 1 - 9</returns>
         private int GetRandomNumber()
         {
             var rnd = new Random();
@@ -64,6 +84,12 @@ namespace PuzzleManagement.Core.Models
             return rnd.Next(1, 10);
         }
 
+
+        /// <summary>
+        /// This method fills a subgrid with values.
+        /// </summary>
+        /// <param name="row">Starting row location of array.</param>
+        /// <param name="col">Starting column location of array.</param>
         private void FillSubgrid(int row, int col)
         {
             int number = 0;
@@ -82,6 +108,13 @@ namespace PuzzleManagement.Core.Models
             }
         }
 
+
+        /// <summary>
+        /// This method fills the remaining cells of the int array
+        /// </summary>
+        /// <param name="row">Starting row location of array.</param>
+        /// <param name="col">Starting column location of array.</param>
+        /// <returns>recursive call</returns>
         private bool FillRemaining(int row, int col)
         {
             if (col >= GRIDSIZE && row < GRIDSIZE - 1)
@@ -136,6 +169,12 @@ namespace PuzzleManagement.Core.Models
             return false;
         }
 
+        /// <summary>
+        /// This method checks if a value is used in a row.
+        /// </summary>
+        /// <param name="row">Row to check</param>
+        /// <param name="number">Value to check</param>
+        /// <returns>if value is used in the row</returns>
         private bool UsedInRow(int row, int number)
         {
             for (int col = 0; col < 9; col++)
@@ -144,6 +183,12 @@ namespace PuzzleManagement.Core.Models
             return false;
         }
 
+        /// <summary>
+        /// This method checks if a value is used in a column.
+        /// </summary>
+        /// <param name="col">Column to check</param>
+        /// <param name="number">Value to check</param>
+        /// <returns>if value is used in the column</returns>
         private bool UsedInColumn(int col, int number)
         {
             for (int row = 0; row < 9; row++)
@@ -152,6 +197,13 @@ namespace PuzzleManagement.Core.Models
             return false;
         }
 
+        /// <summary>
+        /// This method checks if a value is used in a column.
+        /// </summary>
+        /// <param name="startRow">Starting row to check</param>
+        /// <param name="startCol">Starting column to check</param>
+        /// <param name="number">value to check</param>
+        /// <returns>if value is used in subgrid</returns>
         private bool UsedInSubgrid(int startRow, int startCol, int number)
         {
             for (int row = 0; row < 3; row++)
@@ -161,6 +213,13 @@ namespace PuzzleManagement.Core.Models
             return false;
         }
 
+        /// <summary>
+        /// This method checks if the value can be used.
+        /// </summary>
+        /// <param name="row">Row to check</param>
+        /// <param name="col">Column to check</param>
+        /// <param name="number">Value to check</param>
+        /// <returns>if the value can be used</returns>
         private bool CanUseNumber(int row, int col, int number)
         {
             return !UsedInRow(row, number) &&
@@ -168,6 +227,10 @@ namespace PuzzleManagement.Core.Models
                    !UsedInSubgrid(row - row % 3, col - col % 3, number);
         }
 
+        /// <summary>
+        /// Updates the int array for the selected difficulty,
+        /// by iterating the array and updating random value locations to 0.
+        /// </summary>
         private void UpdateForDifficulty()
         {
             int count = (int)this._difficulty;

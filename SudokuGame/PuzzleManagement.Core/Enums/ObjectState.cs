@@ -17,6 +17,9 @@
 
 namespace PuzzleManagement.Core.Enums
 {
+    /// <summary>
+    /// This Enum is used to track the state of an object for persistence.
+    /// </summary>
     public enum ObjectState
     {
         Unchanged,

@@ -26,12 +26,15 @@ namespace Sudoku.Client.DI
 {
     public static class ContainerHelper
     {
-        private static IUnityContainer _container;
+        private static IUnityContainer _container; //container for DI
         public static IUnityContainer Container
         {
             get { return _container; }
         }
 
+        /// <summary>
+        /// This method is used to setup DI with Unity.
+        /// </summary>
         static ContainerHelper()
         {
             _container = new UnityContainer();

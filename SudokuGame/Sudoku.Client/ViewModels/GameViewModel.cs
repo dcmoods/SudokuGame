@@ -90,6 +90,12 @@ namespace Sudoku.Client.ViewModels
         public Command Load { get; private set; }
         public Command Undo { get; private set; }
 
+
+        /// <summary>
+        /// Load GameBoard object into viewmodel
+        /// </summary>
+        /// <param name="puzzleId">Determine which puzzle object to load (nullable will load fresh game)</param>
+        /// <returns></returns>
         public async Task LoadPuzzle(int? puzzleId = null)
         {
             if (puzzleId.HasValue)
@@ -107,7 +113,7 @@ namespace Sudoku.Client.ViewModels
                 });
             }
         }
-
+        
         private async Task NewCommandAsync()
         {
             IsLoading = true;

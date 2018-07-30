@@ -70,7 +70,9 @@
       <SubType>Designer</SubType>
     </None>
     <None Include="packages.config" />
-    <None Include="SudokuGame.sqlite" />
+    <None Include="SudokuGame.sqlite">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\PuzzleManagement.Core\PuzzleManagement.Core.csproj">

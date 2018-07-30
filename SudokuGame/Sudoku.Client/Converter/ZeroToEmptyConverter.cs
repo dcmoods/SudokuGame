@@ -23,8 +23,16 @@ namespace Sudoku.Client.Converter
 {
     public class ZeroToEmptyConverter : IValueConverter
     {
-        public int EmptyStringValue { get; set; }
+        public int EmptyStringValue { get; set; } //This property holds the empty string value
 
+        /// <summary>
+        /// This method converts an int value to a string
+        /// </summary>
+        /// <param name="value">Value to be converted</param>
+        /// <param name="targetType"></param>
+        /// <param name="parameter"></param>
+        /// <param name="culture"></param>
+        /// <returns>object</returns>
         public object Convert(object value, Type targetType, object parameter, System.Globalization.CultureInfo culture)
         {
             if (value == null)
@@ -37,6 +45,14 @@ namespace Sudoku.Client.Converter
                 return value.ToString();
         }
 
+        /// <summary>
+        /// This method converts back a value to int
+        /// </summary>
+        /// <param name="value">Value to be converted</param>
+        /// <param name="targetType"></param>
+        /// <param name="parameter"></param>
+        /// <param name="culture"></param>
+        /// <returns>object</returns>
         public object ConvertBack(object value, Type targetType, object parameter, System.Globalization.CultureInfo culture)
         {
             if (value is string)
@@ -50,6 +66,11 @@ namespace Sudoku.Client.Converter
             return value;
         }
 
+        /// <summary>
+        /// Checks if input is a numeric value
+        /// </summary>
+        /// <param name="input">String input</param>
+        /// <returns>is int value.</returns>
         private bool IsNumeric(string input)
         {
             int test;

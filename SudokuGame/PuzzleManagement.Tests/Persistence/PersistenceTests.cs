@@ -75,7 +75,9 @@ namespace PuzzleManagement.Tests.Persistence
         public void ShouldGetPuzzleEntityAndReturnPuzzleFromRepo()
         {
             var gameRepo = new GameRepository(new PuzzleMapper());
-            var puzzle = gameRepo.GetPuzzleById(1);
+            var puzzleList = gameRepo.GetPuzzleList();
+            Assert.IsNotNull(puzzleList);
+            var puzzle = gameRepo.GetPuzzleById(puzzleList.Last().Id);
             Assert.IsNotNull(puzzle);
         }
 

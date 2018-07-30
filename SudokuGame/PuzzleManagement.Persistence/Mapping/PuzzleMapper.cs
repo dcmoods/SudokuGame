@@ -31,6 +31,11 @@ namespace PuzzleManagement.Persistence.Mapping
         {
         }
 
+        /// <summary>
+        /// This method maps a PuzzleEntity object to a Puzzle object.
+        /// </summary>
+        /// <param name="puzzleEntity">PuzzleEntity to be mapped.</param>
+        /// <returns>Puzzle object</returns>
         public Puzzle MapPuzzleEntityToPuzzle(PuzzleEntity puzzleEntity)
         {
             var difficulty = (Difficulty)puzzleEntity.Difficulty;
@@ -42,6 +47,11 @@ namespace PuzzleManagement.Persistence.Mapping
             return puzzle;
         }
 
+        /// <summary>
+        /// This method maps a Puzzle object to a PuzzleEntity object.
+        /// </summary>
+        /// <param name="puzzle">Puzzle object to be mapped.</param>
+        /// <returns>PuzzleEntity</returns>
         public PuzzleEntity MapPuzzleToPuzzleEntity(Puzzle puzzle)
         {
             PuzzleEntity puzzleEntity = new PuzzleEntity()
@@ -55,6 +65,11 @@ namespace PuzzleManagement.Persistence.Mapping
             return puzzleEntity;
         }
 
+        /// <summary>
+        /// This method maps arrayEntities to an int array.
+        /// </summary>
+        /// <param name="arrayEntities">ArrayEntities to be mapped.</param>
+        /// <param name="array">Array for results out</param>
         private void MapToArray(List<ArrayEntity> arrayEntities, out int[,] array)
         {
             int size = arrayEntities.Count;
@@ -65,6 +80,11 @@ namespace PuzzleManagement.Persistence.Mapping
             }
         }
 
+        /// <summary>
+        /// This method maps an int array to ArrayEntity objects.
+        /// </summary>
+        /// <param name="array">int array to be mapped.</param>
+        /// <returns>Collection of ArrayEntity</returns>
         private List<ArrayEntity> MapToArrayEntity(int[,] array)
         {
             List<ArrayEntity> arrayEntities = new List<ArrayEntity>();

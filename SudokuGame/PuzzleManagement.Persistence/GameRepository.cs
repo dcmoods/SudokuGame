@@ -17,7 +17,6 @@
 
 using PuzzleManagement.Core.Models;
 using PuzzleManagement.Persistence.Mapping;
-using System;
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Diagnostics.Contracts;
@@ -27,12 +26,17 @@ namespace PuzzleManagement.Persistence
 {
     public class GameRepository
     {
-        private PuzzleMapper _mapper;
+        private PuzzleMapper _mapper; //PuzzleMapper object used for mapping data before/after persistence. 
+
         public GameRepository(PuzzleMapper mappingFactory)
         {
             _mapper = mappingFactory;
         }
 
+        /// <summary>
+        /// This method returns a list of Puzzle objects from the datastore.
+        /// </summary>
+        /// <returns>list of Puzzle objects</returns>
         public List<PuzzleEntity> GetPuzzleList()
         {
             using (var context = new GameContext())
@@ -42,6 +46,11 @@ namespace PuzzleManagement.Persistence
             }
         }
 
+        /// <summary>
+        /// This method gets a puzzle object by id from the datastore.
+        /// </summary>
+        /// <param name="id">Puzzle id</param>
+        /// <returns>Puzzle</returns>
         public Puzzle GetPuzzleById(int id)
         {
             using (var context = new GameContext())
@@ -51,6 +60,12 @@ namespace PuzzleManagement.Persistence
             }
         }
 
+        /// <summary>
+        /// This method saves a puzzle object data to the datastore
+        /// after mapping its data to a PuzzleEntity object.
+        /// </summary>
+        /// <param name="puzzle">Puzzle to save.</param>
+        /// <returns>Puzzle id after saved</returns>
         public int SaveGame(Puzzle puzzle)
         {
             Contract.Assert(puzzle != null);
@@ -91,6 +106,10 @@ namespace PuzzleManagement.Persistence
             }
         }
 
+        /// <summary>
+        /// This method deletes a puzzle from the datastore
+        /// </summary>
+        /// <param name="puzzle">Puzzle to be deleted</param>
         public void DeletePuzzle(Puzzle puzzle)
         {
             Contract.Assert(puzzle != null);

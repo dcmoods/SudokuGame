@@ -19,6 +19,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sudoku.ApplicationLayer", "
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SudokuClient.Tests", "SudokuClient.Tests\SudokuClient.Tests.csproj", "{62AA3317-2DCF-4710-875A-17CAC06BBA14}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Installer", "Installer", "{44637B66-F73B-4A2B-89DD-35792B42258A}"
+EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "Sudoku Game And Solver", "Sudoku Game And Solver\Sudoku Game And Solver.vdproj", "{4F2A4B0C-C3EB-4C76-8E39-A3EA1727AF30}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -49,6 +53,8 @@ Global
 		{62AA3317-2DCF-4710-875A-17CAC06BBA14}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{62AA3317-2DCF-4710-875A-17CAC06BBA14}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{62AA3317-2DCF-4710-875A-17CAC06BBA14}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4F2A4B0C-C3EB-4C76-8E39-A3EA1727AF30}.Debug|Any CPU.ActiveCfg = Debug
+		{4F2A4B0C-C3EB-4C76-8E39-A3EA1727AF30}.Release|Any CPU.ActiveCfg = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -60,6 +66,7 @@ Global
 		{513CD391-C595-45A1-B4E9-3F296513528B} = {5942432A-3F83-4FFD-8235-40FE16ED094B}
 		{2C4D0BB5-90E6-493A-86C2-8B5CB900CE07} = {5942432A-3F83-4FFD-8235-40FE16ED094B}
 		{62AA3317-2DCF-4710-875A-17CAC06BBA14} = {5942432A-3F83-4FFD-8235-40FE16ED094B}
+		{4F2A4B0C-C3EB-4C76-8E39-A3EA1727AF30} = {44637B66-F73B-4A2B-89DD-35792B42258A}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {9C3CB9DD-58D0-4B12-9A0A-24A8E071A362}

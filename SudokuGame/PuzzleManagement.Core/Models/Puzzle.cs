@@ -40,8 +40,16 @@ namespace PuzzleManagement.Core.Models
         public DateTime EndTime { get; set; }
         public ObjectState State { get; set; }
 
+        /// <summary>
+        /// This method is meant for inheriting objects to initialize puzzles.
+        /// </summary>
         public abstract void CreatePuzzle();
 
+
+        /// <summary>
+        /// This method solves the puzzle and stores the result in the solved puzzle object.
+        /// </summary>
+        /// <returns>if solving was a success.</returns>
         public bool Solve()
         {
             Contract.Requires(PuzzleArray != null);
@@ -52,6 +60,10 @@ namespace PuzzleManagement.Core.Models
             return result;
         }
 
+        /// <summary>
+        /// This method checks if the Puzzle is solved correctly
+        /// </summary>
+        /// <returns>if the puzzle is solved correctly.</returns>
         public bool Check()
         {
             if (SolvedPuzzleArray == null)
@@ -61,7 +73,11 @@ namespace PuzzleManagement.Core.Models
             return PuzzlesAreEqual();
         }
 
-        public bool PuzzlesAreEqual()
+        /// <summary>
+        /// This method checks if the solved puzzle and initial puzzle are equal.
+        /// </summary>
+        /// <returns>if the PuzzleArray and SolvedPuzzleArray are equal.</returns>
+        private bool PuzzlesAreEqual()
         {
             for (int row = 0; row < 9; row++)
             {

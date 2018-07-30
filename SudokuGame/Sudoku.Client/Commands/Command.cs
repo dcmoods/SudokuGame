@@ -22,7 +22,7 @@ namespace Sudoku.Client.Commands
 {
     public class Command<T> : ICommand
     {
-        private readonly Func<T, bool> _canExecute;
+        private readonly Func<T, bool> _canExecute;  
         private readonly Action<T> _execute;
 
 
