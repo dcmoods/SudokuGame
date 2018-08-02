@@ -21,7 +21,6 @@ using PuzzleManagement.Persistence;
 using Sudoku.Client.Commands;
 using Sudoku.Client.Common;
 using Sudoku.Client.Events;
-using System;
 using System.Collections.Generic;
 using System.Diagnostics.Contracts;
 
@@ -51,6 +50,9 @@ namespace Sudoku.Client.ViewModels
             RefreshSaves();
         }
 
+        /// <summary>
+        /// This method refreshes the saved games
+        /// </summary>
         public void RefreshSaves()
         {
             SavedPuzzles = _gameRepository.GetPuzzleList();

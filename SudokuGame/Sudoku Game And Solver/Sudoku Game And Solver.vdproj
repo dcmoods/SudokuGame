@@ -315,6 +315,12 @@
         }
         "Entry"
         {
+        "MsmKey" = "8:_5F2D5B7FEC2F42C38E507831E6671871"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_627458203E8463D28001587915160C58"
         "OwnerKey" = "8:_FC86C4EF04E846D9B506893C5E2C372C"
         "MsmSig" = "8:_UNDEFINED"
@@ -670,7 +676,7 @@
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_17998F53D9EA652873C73B383636778E"
+        "OwnerKey" = "8:_FC86C4EF04E846D9B506893C5E2C372C"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -689,12 +695,6 @@
         {
         "MsmKey" = "8:_UNDEFINED"
         "OwnerKey" = "8:_8102F018C7EC14E9D33B975DC011FA21"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_FC86C4EF04E846D9B506893C5E2C372C"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -851,6 +851,12 @@
         {
         "MsmKey" = "8:_UNDEFINED"
         "OwnerKey" = "8:_A4B1F7A86805DE39330594C5756F2D71"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_UNDEFINED"
+        "OwnerKey" = "8:_17998F53D9EA652873C73B383636778E"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -1189,6 +1195,14 @@
         "PrivateKeyFile" = "8:"
         "TimeStampServer" = "8:"
         "InstallerBootstrapper" = "3:2"
+            "BootstrapperCfg:{63ACBE69-63AA-4F98-B2B6-99F9E24495F2}"
+            {
+            "Enabled" = "11:TRUE"
+            "PromptEnabled" = "11:TRUE"
+            "PrerequisitesLocation" = "2:1"
+            "Url" = "8:"
+            "ComponentsUrl" = "8:"
+            }
         }
         "Release"
         {
@@ -1205,6 +1219,14 @@
         "PrivateKeyFile" = "8:"
         "TimeStampServer" = "8:"
         "InstallerBootstrapper" = "3:2"
+            "BootstrapperCfg:{63ACBE69-63AA-4F98-B2B6-99F9E24495F2}"
+            {
+            "Enabled" = "11:TRUE"
+            "PromptEnabled" = "11:TRUE"
+            "PrerequisitesLocation" = "2:1"
+            "Url" = "8:"
+            "ComponentsUrl" = "8:"
+            }
         }
     }
     "Deployable"
@@ -2430,6 +2452,26 @@
             "Register" = "3:1"
             "Exclude" = "11:FALSE"
             "IsDependency" = "11:TRUE"
+            "IsolateTo" = "8:"
+            }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_5F2D5B7FEC2F42C38E507831E6671871"
+            {
+            "SourcePath" = "8:..\\Sudoku.Client\\Images\\favicon.ico"
+            "TargetName" = "8:favicon.ico"
+            "Tag" = "8:"
+            "Folder" = "8:_133CA81B4959450989F8E896A5473CFD"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
             "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_627458203E8463D28001587915160C58"
@@ -4057,7 +4099,7 @@
             "Target" = "8:_FC86C4EF04E846D9B506893C5E2C372C"
             "Folder" = "8:_0510ADB000D4490AA96D49B4F00D8F46"
             "WorkingFolder" = "8:_133CA81B4959450989F8E896A5473CFD"
-            "Icon" = "8:"
+            "Icon" = "8:_5F2D5B7FEC2F42C38E507831E6671871"
             "Feature" = "8:"
             }
             "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_A9919E6C406D4634AB47F387734843FF"
@@ -4071,7 +4113,7 @@
             "Target" = "8:_FC86C4EF04E846D9B506893C5E2C372C"
             "Folder" = "8:_4369EC5562414B809D3A09CD74CDD887"
             "WorkingFolder" = "8:_133CA81B4959450989F8E896A5473CFD"
-            "Icon" = "8:"
+            "Icon" = "8:_5F2D5B7FEC2F42C38E507831E6671871"
             "Feature" = "8:"
             }
         }
